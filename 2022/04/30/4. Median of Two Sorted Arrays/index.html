@@ -17,16 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Hexo</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://franky-jia.github.io/index.html">
+  <title>4. Median of Two Sorted Arrays | Hexo</title>
+  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738class Solution:    def findMedianSortedArrays(self, nums1: list, nums2: list) -&gt; float:        res&#x3D;0                while((len(num">
+<meta property="og:type" content="article">
+<meta property="og:title" content="4. Median of Two Sorted Arrays">
+<meta property="og:url" content="https://franky-jia.github.io/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738class Solution:    def findMedianSortedArrays(self, nums1: list, nums2: list) -&gt; float:        res&#x3D;0                while((len(num">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-30T12:22:19.000Z">
+<meta property="article:modified_time" content="2022-04-30T12:23:38.112Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://franky-jia.github.io/index.html">
+  <link rel="canonical" href="https://franky-jia.github.io/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -333,173 +338,114 @@
 </aside>
 
   
-  <main class="main" role="main">
   
-  <div class="content article-list">
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-4. Median of Two Sorted Arrays" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
+    <div class="article-header">
+      
+        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/">4. Median of Two Sorted Arrays</a>
+    <h1 class="article-title" itemprop="name">
+      4. Median of Two Sorted Arrays
     </h1>
   
 
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
+      
+      <div class="article-meta">
+        <span class="article-date">
     <i class="icon icon-calendar-check"></i>
 	<a href="/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/" class="article-date">
-	  <time datetime="2022-04-30T12:22:19.000Z" itemprop="datePublished">Apr 30</time>
+	  <time datetime="2022-04-30T12:22:19.000Z" itemprop="datePublished">2022-04-30</time>
 	</a>
 </span>
-    
-    
+        
+        
   <span class="article-tag">
     <i class="icon icon-tags"></i>
 	<a class="article-tag-link-link" href="/tags/LeetCode/" rel="tag">LeetCode</a>
   </span>
 
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/#comments" class="article-comment-link">Comments</a></span>
-    
-  </p>
-</article>
+        
 
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/30/3.%20Longest%20Substring%20Without%20Repeating%20Characters/">3. Longest Substring Without Repeating Characters</a>
-    </h1>
-  
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def findMedianSortedArrays(self, nums1: list, nums2: list) -&gt; float:</span><br><span class="line">        res=0</span><br><span class="line">        </span><br><span class="line">        while((len(nums1)+len(nums2))&gt;2):</span><br><span class="line">            if(len(nums1)==0):</span><br><span class="line">                nums2.pop(0)</span><br><span class="line">                nums2.pop()</span><br><span class="line">            elif(len(nums2)==0):</span><br><span class="line">                nums1.pop(0)</span><br><span class="line">                nums1.pop()</span><br><span class="line">            else:</span><br><span class="line">                if(nums1[0]&lt;=nums2[0]):</span><br><span class="line">                    nums1.pop(0)</span><br><span class="line">                else:</span><br><span class="line">                    nums2.pop(0)</span><br><span class="line">                if(len(nums1)==0):</span><br><span class="line">                    nums2.pop()</span><br><span class="line">                elif(len(nums2)==0):</span><br><span class="line">                    nums1.pop()</span><br><span class="line">                else:</span><br><span class="line">                    if(nums1[len(nums1)-1]&lt;=nums2[len(nums2)-1]):</span><br><span class="line">                        nums2.pop()</span><br><span class="line">                    else:</span><br><span class="line">                        nums1.pop()</span><br><span class="line">        if(len(nums1)==0):</span><br><span class="line">            if(len(nums2)==1):</span><br><span class="line">                res = nums2[0]/1</span><br><span class="line">            else:</span><br><span class="line">                res = (nums2[0]+nums2[1])/2</span><br><span class="line">        elif(len(nums2)==0):</span><br><span class="line">            if(len(nums1)==1):</span><br><span class="line">                res = nums1[0]/1</span><br><span class="line">            else:</span><br><span class="line">                res = (nums1[0]+nums1[1])/2</span><br><span class="line">        else:</span><br><span class="line">            res = (nums1[0]+nums2[0])/2</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
 
+<p>无优化</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://franky-jia.github.io/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/" title="4. Median of Two Sorted Arrays" target="_blank" rel="external">https://franky-jia.github.io/2022/04/30/4. Median of Two Sorted Arrays/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/franky-jia" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/aaa.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/franky-jia" target="_blank"><span class="text-dark">取名很困难</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
   </div>
+</div>
+
+
+    </div>
+  </article>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/04/30/3.%20Longest%20Substring%20Without%20Repeating%20Characters/" class="article-date">
-	  <time datetime="2022-04-30T02:06:18.000Z" itemprop="datePublished">Apr 30</time>
-	</a>
-</span>
     
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/LeetCode/" rel="tag">LeetCode</a>
-  </span>
 
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/30/3.%20Longest%20Substring%20Without%20Repeating%20Characters/#comments" class="article-comment-link">Comments</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/28/2-Add%20Two%20Numbers/">2-Add Two Numbers</a>
-    </h1>
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
   
-
-  </div>
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/04/30/3.%20Longest%20Substring%20Without%20Repeating%20Characters/" title="3. Longest Substring Without Repeating Characters"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/04/28/2-Add%20Two%20Numbers/" class="article-date">
-	  <time datetime="2022-04-28T08:15:25.000Z" itemprop="datePublished">Apr 28</time>
-	</a>
-</span>
-    
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/LeetCode/" rel="tag">LeetCode</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/28/2-Add%20Two%20Numbers/#comments" class="article-comment-link">Comments</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/27/1-TwoSum/">1-Two Sum</a>
-    </h1>
   
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/04/27/1-TwoSum/" class="article-date">
-	  <time datetime="2022-04-27T07:47:13.584Z" itemprop="datePublished">Apr 27</time>
-	</a>
-</span>
-    
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/LeetCode/" rel="tag">LeetCode</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/27/1-TwoSum/#comments" class="article-comment-link">Comments</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/26/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%8F%8A%E9%85%8D%E7%BD%AE/">Hexo搭建博客、配置、使用方法</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/04/26/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%8F%8A%E9%85%8D%E7%BD%AE/" class="article-date">
-	  <time datetime="2022-04-26T08:01:19.000Z" itemprop="datePublished">Apr 26</time>
-	</a>
-</span>
-    
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/Hexo/" rel="tag">Hexo</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/26/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%8F%8A%E9%85%8D%E7%BD%AE/#comments" class="article-comment-link">Comments</a></span>
-    
-  </p>
-</article>
-
+  <div class="bar-right">
     
   </div>
+  </div>
+</nav>
+  
 
-   
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
