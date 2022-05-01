@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>2-Add Two Numbers | Hexo</title>
-  <meta name="description" content="2-Add Two Numbers123456789101112131415161718192021# Definition for singly-linked list.# class ListNode:#     def __init__(self, val&#x3D;0, next&#x3D;None):#         self.val &#x3D; val#         self.next &#x3D; nextclas">
+  <title>5. Longest Palindromic Substring | Hexo</title>
+  <meta name="description" content="5-Longest Palindromic Substring初始想法： 做一次遍历，Index代表回文数据的中心，向两边延伸（找对称字符）到极限，最后判断长度是否为最长 123456789101112131415161718192021222324class Solution:    def longestPalindrome(self, s: str) -&gt; str:        re">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2-Add Two Numbers">
-<meta property="og:url" content="https://franky-jia.github.io/2022/04/28/2-Add%20Two%20Numbers/index.html">
+<meta property="og:title" content="5. Longest Palindromic Substring">
+<meta property="og:url" content="https://franky-jia.github.io/2022/05/01/5.%20Longest%20Palindromic%20Substring/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="2-Add Two Numbers123456789101112131415161718192021# Definition for singly-linked list.# class ListNode:#     def __init__(self, val&#x3D;0, next&#x3D;None):#         self.val &#x3D; val#         self.next &#x3D; nextclas">
+<meta property="og:description" content="5-Longest Palindromic Substring初始想法： 做一次遍历，Index代表回文数据的中心，向两边延伸（找对称字符）到极限，最后判断长度是否为最长 123456789101112131415161718192021222324class Solution:    def longestPalindrome(self, s: str) -&gt; str:        re">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-28T08:15:25.000Z">
-<meta property="article:modified_time" content="2022-04-28T08:21:54.595Z">
+<meta property="article:published_time" content="2022-05-01T07:19:25.000Z">
+<meta property="article:modified_time" content="2022-05-01T08:34:17.930Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://franky-jia.github.io/2022/04/28/2-Add%20Two%20Numbers/index.html">
+  <link rel="canonical" href="https://franky-jia.github.io/2022/05/01/5.%20Longest%20Palindromic%20Substring/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -341,14 +341,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-2-Add Two Numbers" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-5. Longest Palindromic Substring" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      2-Add Two Numbers
+      5. Longest Palindromic Substring
     </h1>
   
 
@@ -356,8 +356,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/04/28/2-Add%20Two%20Numbers/" class="article-date">
-	  <time datetime="2022-04-28T08:15:25.000Z" itemprop="datePublished">2022-04-28</time>
+	<a href="/2022/05/01/5.%20Longest%20Palindromic%20Substring/" class="article-date">
+	  <time datetime="2022-05-01T07:19:25.000Z" itemprop="datePublished">2022-05-01</time>
 	</a>
 </span>
         
@@ -370,24 +370,25 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/28/2-Add%20Two%20Numbers/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/01/5.%20Longest%20Palindromic%20Substring/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="2-Add-Two-Numbers"><a href="#2-Add-Two-Numbers" class="headerlink" title="2-Add Two Numbers"></a>2-Add Two Numbers</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># Definition for singly-linked list.</span><br><span class="line"># class ListNode:</span><br><span class="line">#     def __init__(self, val=0, next=None):</span><br><span class="line">#         self.val = val</span><br><span class="line">#         self.next = next</span><br><span class="line">class Solution:</span><br><span class="line">    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -&gt; Optional[ListNode]:</span><br><span class="line">        def fn(node):</span><br><span class="line">            if (node):</span><br><span class="line">                return node.val + fn(node.next)*10</span><br><span class="line">            else:</span><br><span class="line">                return 0</span><br><span class="line">        list1 = end = ListNode(0)</span><br><span class="line">        num = fn(l1)+fn(l2)</span><br><span class="line">        if num == 0:</span><br><span class="line">            return list1</span><br><span class="line">        while(num&gt;0):</span><br><span class="line">            end.next = ListNode(num%10)</span><br><span class="line">            end = end.next</span><br><span class="line">            num=num//10</span><br><span class="line">        return list1.next</span><br></pre></td></tr></table></figure>
-
-<p>三处优化的点：</p>
-<ol>
-<li><p>链表尾部添加新节点和指针可以同时写一行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">end.next =end= ListNode(num%10)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>if</code> 判断可以用简写形式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return node.val + 10 * toint(node.next) if node else 0</span><br></pre></td></tr></table></figure>
-</li>
-<li><h5 id="生成链表用递归形式来写"><a href="#生成链表用递归形式来写" class="headerlink" title="生成链表用递归形式来写"></a>生成链表用递归形式来写</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def tolist(n):</span><br><span class="line">    node = ListNode(n % 10)</span><br><span class="line">    if n &gt; 9:</span><br><span class="line">    node.next = tolist(n / 10)</span><br><span class="line">    return node</span><br></pre></td></tr></table></figure></li>
+        <h2 id="5-Longest-Palindromic-Substring"><a href="#5-Longest-Palindromic-Substring" class="headerlink" title="5-Longest Palindromic Substring"></a>5-Longest Palindromic Substring</h2><h5 id="初始想法："><a href="#初始想法：" class="headerlink" title="初始想法："></a>初始想法：</h5><ul>
+<li><p>做一次遍历，Index代表回文数据的中心，向两边延伸（找对称字符）到极限，最后判断长度是否为最长</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def longestPalindrome(self, s: str) -&gt; str:</span><br><span class="line">        resstr=&#x27;&#x27;</span><br><span class="line">        def find(i, j, s:str):</span><br><span class="line">            if(i&gt;=0 and j&lt;len(s) and s[i]==s[j]):</span><br><span class="line">                return True</span><br><span class="line">            else:</span><br><span class="line">                return False</span><br><span class="line">        for index in range(len(s)):</span><br><span class="line">            i=index</span><br><span class="line">            j=index+1</span><br><span class="line">            while(find(i, j, s)):</span><br><span class="line">                if(len(resstr) &lt; len(s[i: j+1])):</span><br><span class="line">                    resstr=s[i:j+1]</span><br><span class="line">                i-=1</span><br><span class="line">                j+=1</span><br><span class="line">            i=index</span><br><span class="line">            j=index</span><br><span class="line">            while(find(i, j, s)):</span><br><span class="line">                if(len(resstr) &lt; len(s[i: j+1])):</span><br><span class="line">                    resstr=s[i:j+1]</span><br><span class="line">                i-=1</span><br><span class="line">                j+=1</span><br><span class="line">        return resstr</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h5><ol>
+<li>速度不知道为什么相比来说慢，没找到原因，应该不是算法的问题，很可能是代码实现的问题。把len操作改成用变量代替，速度有了小部分提升</li>
 </ol>
+<h5 id="另一种实现方法："><a href="#另一种实现方法：" class="headerlink" title="另一种实现方法："></a>另一种实现方法：</h5><ol>
+<li><code>python</code> 可以很方便地进行字符串反转，使用反转和原字符串比较 + 记录步长（永远用目前得到的最长步长）即可</li>
+<li>字符串反转：<code>s1[::-1]</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def longestPalindrome(self, s: str) -&gt; str:</span><br><span class="line">        if s == s[::-1]: return s</span><br><span class="line">        </span><br><span class="line">        start, size = 0, 1</span><br><span class="line">        for i in range(1, len(s)):</span><br><span class="line">            l, r = i - size, i + 1</span><br><span class="line">            s1, s2 = s[l-1:r], s[l:r]</span><br><span class="line">            </span><br><span class="line">            if l - 1 &gt;= 0 and s1 == s1[::-1]:</span><br><span class="line">                start, size = l - 1, size + 2</span><br><span class="line">            elif s2 == s2[::-1]:</span><br><span class="line">                start, size = l, size + 1</span><br><span class="line">                </span><br><span class="line">        return s[start:start+size]</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -397,7 +398,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://franky-jia.github.io/2022/04/28/2-Add%20Two%20Numbers/" title="2-Add Two Numbers" target="_blank" rel="external">https://franky-jia.github.io/2022/04/28/2-Add Two Numbers/</a>
+      <a href="https://franky-jia.github.io/2022/05/01/5.%20Longest%20Palindromic%20Substring/" title="5. Longest Palindromic Substring" target="_blank" rel="external">https://franky-jia.github.io/2022/05/01/5. Longest Palindromic Substring/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -437,13 +438,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/04/30/3.%20Longest%20Substring%20Without%20Repeating%20Characters/" title="3. Longest Substring Without Repeating Characters"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/04/27/1-TwoSum/" title="1-Two Sum"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/" title="4. Median of Two Sorted Arrays"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
