@@ -18,17 +18,19 @@
   
   
   <title>11. Container With Most Water | Hexo</title>
-  <meta property="og:type" content="article">
+  <meta name="description" content="思路其实很简单，但是并没有很好想出来 由两侧开始向中间聚集，在这个过程中不断把短板替换成更长的板，比较面积，直到在中间相遇 1234567891011121314class Solution:    def maxArea(self, height: List[int]) -&gt; int:        p1 &#x3D; 0  # first (left) pointer        p2 &#x3D; le">
+<meta property="og:type" content="article">
 <meta property="og:title" content="11. Container With Most Water">
 <meta property="og:url" content="https://franky-jia.github.io/2022/05/07/11.%20Container%20With%20Most%20Water/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="思路其实很简单，但是并没有很好想出来 由两侧开始向中间聚集，在这个过程中不断把短板替换成更长的板，比较面积，直到在中间相遇 1234567891011121314class Solution:    def maxArea(self, height: List[int]) -&gt; int:        p1 &#x3D; 0  # first (left) pointer        p2 &#x3D; le">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-07T09:39:26.000Z">
-<meta property="article:modified_time" content="2022-05-07T09:40:41.269Z">
+<meta property="article:modified_time" content="2022-05-08T03:32:18.776Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="LeetCode Top Questions">
-<meta property="article:tag" content="not finished">
+<meta property="article:tag" content="unfinished">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
   <link rel="canonical" href="https://franky-jia.github.io/2022/05/07/11.%20Container%20With%20Most%20Water/index.html">
@@ -222,7 +224,7 @@
   <div class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode-Top-Questions/" rel="tag">LeetCode Top Questions</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dp/" rel="tag">dp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/not-finished/" rel="tag">not finished</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/requests/" rel="tag">requests</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unfinished/" rel="tag">unfinished</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode-Top-Questions/" rel="tag">LeetCode Top Questions</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dp/" rel="tag">dp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/requests/" rel="tag">requests</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unfinished/" rel="tag">unfinished</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -232,7 +234,7 @@
   <div class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="/tags/LeetCode/" style="font-size: 14px;">LeetCode</a> <a href="/tags/LeetCode-Top-Questions/" style="font-size: 14px;">LeetCode Top Questions</a> <a href="/tags/dp/" style="font-size: 13px;">dp</a> <a href="/tags/not-finished/" style="font-size: 13px;">not finished</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/requests/" style="font-size: 13px;">requests</a> <a href="/tags/unfinished/" style="font-size: 13px;">unfinished</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 13px;">爬虫</a>
+      <a href="/tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="/tags/LeetCode/" style="font-size: 14px;">LeetCode</a> <a href="/tags/LeetCode-Top-Questions/" style="font-size: 14px;">LeetCode Top Questions</a> <a href="/tags/dp/" style="font-size: 13px;">dp</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/requests/" style="font-size: 13px;">requests</a> <a href="/tags/unfinished/" style="font-size: 13.5px;">unfinished</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 13px;">爬虫</a>
     </div>
   </div>
 
@@ -364,7 +366,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/LeetCode/" rel="tag">LeetCode</a>, <a class="article-tag-link-link" href="/tags/LeetCode-Top-Questions/" rel="tag">LeetCode Top Questions</a>, <a class="article-tag-link-link" href="/tags/not-finished/" rel="tag">not finished</a>
+	<a class="article-tag-link-link" href="/tags/LeetCode/" rel="tag">LeetCode</a>, <a class="article-tag-link-link" href="/tags/LeetCode-Top-Questions/" rel="tag">LeetCode Top Questions</a>, <a class="article-tag-link-link" href="/tags/unfinished/" rel="tag">unfinished</a>
   </span>
 
 
@@ -376,7 +378,11 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        
+        <p>思路其实很简单，但是并没有很好想出来</p>
+<p>由两侧开始向中间聚集，在这个过程中不断把短板替换成更长的板，比较面积，直到在中间相遇</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def maxArea(self, height: List[int]) -&gt; int:</span><br><span class="line">        p1 = 0  # first (left) pointer</span><br><span class="line">        p2 = len(height) - 1  # second (right) pointer</span><br><span class="line">        max_area = 0</span><br><span class="line">        while p1 != p2:</span><br><span class="line">            if height[p1] &gt; height[p2]:</span><br><span class="line">                area = height[p2] * (p2 - p1)  # height of smaller edge multiplies on length</span><br><span class="line">                p2 -= 1  # changing smaller edge</span><br><span class="line">            else:</span><br><span class="line">                area = height[p1] * (p2 - p1)</span><br><span class="line">                p1 += 1</span><br><span class="line">            if area &gt; max_area: max_area = area  # increasing max area if possible</span><br><span class="line">        return max_area</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     <div class="article-footer">
