@@ -17,22 +17,22 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>4. Median of Two Sorted Arrays | Hexo</title>
-  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738class Solution:    def findMedianSortedArrays(self, nums1: list, nums2: list) -&gt; float:        res&#x3D;0                while((len(num">
+  <title>19. Remove Nth Node From End of List | Hexo</title>
+  <meta name="description" content="自己的思路有点复杂，没有从指针这个角度来进行考虑，导致比较臃肿，而且不好用。 别人的思路：选出两个指针，间隔n个距离，一起向后移动，一个到终点，另一个指针位置就是需要的节点 根本愿意还是积累不够，还在从队列的角度来思考链表的问题，以后遇到间隔问题首先想到用双指针解决。已经思维定势了，不是什么好事 123456789101112class Solution:    def removeNthFrom">
 <meta property="og:type" content="article">
-<meta property="og:title" content="4. Median of Two Sorted Arrays">
-<meta property="og:url" content="https://franky-jia.github.io/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/index.html">
+<meta property="og:title" content="19. Remove Nth Node From End of List">
+<meta property="og:url" content="https://franky-jia.github.io/2022/05/10/19.%20Remove%20Nth%20Node%20From%20End%20of%20List/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738class Solution:    def findMedianSortedArrays(self, nums1: list, nums2: list) -&gt; float:        res&#x3D;0                while((len(num">
+<meta property="og:description" content="自己的思路有点复杂，没有从指针这个角度来进行考虑，导致比较臃肿，而且不好用。 别人的思路：选出两个指针，间隔n个距离，一起向后移动，一个到终点，另一个指针位置就是需要的节点 根本愿意还是积累不够，还在从队列的角度来思考链表的问题，以后遇到间隔问题首先想到用双指针解决。已经思维定势了，不是什么好事 123456789101112class Solution:    def removeNthFrom">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-30T12:22:19.000Z">
-<meta property="article:modified_time" content="2022-05-02T02:34:34.148Z">
+<meta property="article:published_time" content="2022-05-10T03:38:25.000Z">
+<meta property="article:modified_time" content="2022-05-10T03:42:46.069Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="LeetCode Top Questions">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://franky-jia.github.io/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/index.html">
+  <link rel="canonical" href="https://franky-jia.github.io/2022/05/10/19.%20Remove%20Nth%20Node%20From%20End%20of%20List/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -342,14 +342,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-4. Median of Two Sorted Arrays" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-19. Remove Nth Node From End of List" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      4. Median of Two Sorted Arrays
+      19. Remove Nth Node From End of List
     </h1>
   
 
@@ -357,8 +357,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/" class="article-date">
-	  <time datetime="2022-04-30T12:22:19.000Z" itemprop="datePublished">2022-04-30</time>
+	<a href="/2022/05/10/19.%20Remove%20Nth%20Node%20From%20End%20of%20List/" class="article-date">
+	  <time datetime="2022-05-10T03:38:25.000Z" itemprop="datePublished">2022-05-10</time>
 	</a>
 </span>
         
@@ -371,15 +371,17 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/10/19.%20Remove%20Nth%20Node%20From%20End%20of%20List/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def findMedianSortedArrays(self, nums1: list, nums2: list) -&gt; float:</span><br><span class="line">        res=0</span><br><span class="line">        </span><br><span class="line">        while((len(nums1)+len(nums2))&gt;2):</span><br><span class="line">            if(len(nums1)==0):</span><br><span class="line">                nums2.pop(0)</span><br><span class="line">                nums2.pop()</span><br><span class="line">            elif(len(nums2)==0):</span><br><span class="line">                nums1.pop(0)</span><br><span class="line">                nums1.pop()</span><br><span class="line">            else:</span><br><span class="line">                if(nums1[0]&lt;=nums2[0]):</span><br><span class="line">                    nums1.pop(0)</span><br><span class="line">                else:</span><br><span class="line">                    nums2.pop(0)</span><br><span class="line">                if(len(nums1)==0):</span><br><span class="line">                    nums2.pop()</span><br><span class="line">                elif(len(nums2)==0):</span><br><span class="line">                    nums1.pop()</span><br><span class="line">                else:</span><br><span class="line">                    if(nums1[len(nums1)-1]&lt;=nums2[len(nums2)-1]):</span><br><span class="line">                        nums2.pop()</span><br><span class="line">                    else:</span><br><span class="line">                        nums1.pop()</span><br><span class="line">        if(len(nums1)==0):</span><br><span class="line">            if(len(nums2)==1):</span><br><span class="line">                res = nums2[0]/1</span><br><span class="line">            else:</span><br><span class="line">                res = (nums2[0]+nums2[1])/2</span><br><span class="line">        elif(len(nums2)==0):</span><br><span class="line">            if(len(nums1)==1):</span><br><span class="line">                res = nums1[0]/1</span><br><span class="line">            else:</span><br><span class="line">                res = (nums1[0]+nums1[1])/2</span><br><span class="line">        else:</span><br><span class="line">            res = (nums1[0]+nums2[0])/2</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+        <p>自己的思路有点复杂，没有从指针这个角度来进行考虑，导致比较臃肿，而且不好用。</p>
+<h5 id="别人的思路："><a href="#别人的思路：" class="headerlink" title="别人的思路："></a>别人的思路：</h5><p>选出两个指针，间隔n个距离，一起向后移动，一个到终点，另一个指针位置就是需要的节点</p>
+<p>根本愿意还是积累不够，还在从队列的角度来思考链表的问题，以后遇到间隔问题首先想到用双指针解决。已经思维定势了，不是什么好事</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def removeNthFromEnd(self, head, n):</span><br><span class="line">        fast = slow = head</span><br><span class="line">        for _ in range(n):</span><br><span class="line">            fast = fast.next</span><br><span class="line">        if not fast:</span><br><span class="line">            return head.next</span><br><span class="line">        while fast.next:</span><br><span class="line">            fast = fast.next</span><br><span class="line">            slow = slow.next</span><br><span class="line">        slow.next = slow.next.next</span><br><span class="line">        return head</span><br></pre></td></tr></table></figure>
 
-<p>无优化</p>
 
       
     </div>
@@ -389,7 +391,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://franky-jia.github.io/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/" title="4. Median of Two Sorted Arrays" target="_blank" rel="external">https://franky-jia.github.io/2022/04/30/4. Median of Two Sorted Arrays/</a>
+      <a href="https://franky-jia.github.io/2022/05/10/19.%20Remove%20Nth%20Node%20From%20End%20of%20List/" title="19. Remove Nth Node From End of List" target="_blank" rel="external">https://franky-jia.github.io/2022/05/10/19. Remove Nth Node From End of List/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -429,13 +431,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/05/01/5.%20Longest%20Palindromic%20Substring/" title="5. Longest Palindromic Substring"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/04/30/3.%20Longest%20Substring%20Without%20Repeating%20Characters/" title="3. Longest Substring Without Repeating Characters"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/05/09/17.%20Letter%20Combinations%20of%20a%20Phone%20Number/" title="17. Letter Combinations of a Phone Number"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

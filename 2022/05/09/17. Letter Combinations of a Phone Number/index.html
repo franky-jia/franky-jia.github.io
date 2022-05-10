@@ -17,22 +17,22 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>4. Median of Two Sorted Arrays | Hexo</title>
-  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738class Solution:    def findMedianSortedArrays(self, nums1: list, nums2: list) -&gt; float:        res&#x3D;0                while((len(num">
+  <title>17. Letter Combinations of a Phone Number | Hexo</title>
+  <meta name="description" content="办法其实都一样，就是遍历，然后往里面添加新的，主要看代码实现 12345678910111213class Solution:    def letterCombinations(self, digits: str) -&gt; list[str]:        list1 &#x3D; [&amp;#x27;&amp;#x27;, &amp;#x27;&amp;#x27;, &amp;#x27;abc&amp;#x27;, &amp;#x27;def&amp;#x2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="4. Median of Two Sorted Arrays">
-<meta property="og:url" content="https://franky-jia.github.io/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/index.html">
+<meta property="og:title" content="17. Letter Combinations of a Phone Number">
+<meta property="og:url" content="https://franky-jia.github.io/2022/05/09/17.%20Letter%20Combinations%20of%20a%20Phone%20Number/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738class Solution:    def findMedianSortedArrays(self, nums1: list, nums2: list) -&gt; float:        res&#x3D;0                while((len(num">
+<meta property="og:description" content="办法其实都一样，就是遍历，然后往里面添加新的，主要看代码实现 12345678910111213class Solution:    def letterCombinations(self, digits: str) -&gt; list[str]:        list1 &#x3D; [&amp;#x27;&amp;#x27;, &amp;#x27;&amp;#x27;, &amp;#x27;abc&amp;#x27;, &amp;#x27;def&amp;#x2">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-30T12:22:19.000Z">
-<meta property="article:modified_time" content="2022-05-02T02:34:34.148Z">
+<meta property="article:published_time" content="2022-05-09T01:11:21.000Z">
+<meta property="article:modified_time" content="2022-05-09T02:04:06.683Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="LeetCode Top Questions">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://franky-jia.github.io/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/index.html">
+  <link rel="canonical" href="https://franky-jia.github.io/2022/05/09/17.%20Letter%20Combinations%20of%20a%20Phone%20Number/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -342,14 +342,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-4. Median of Two Sorted Arrays" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-17. Letter Combinations of a Phone Number" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      4. Median of Two Sorted Arrays
+      17. Letter Combinations of a Phone Number
     </h1>
   
 
@@ -357,8 +357,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/" class="article-date">
-	  <time datetime="2022-04-30T12:22:19.000Z" itemprop="datePublished">2022-04-30</time>
+	<a href="/2022/05/09/17.%20Letter%20Combinations%20of%20a%20Phone%20Number/" class="article-date">
+	  <time datetime="2022-05-09T01:11:21.000Z" itemprop="datePublished">2022-05-09</time>
 	</a>
 </span>
         
@@ -371,15 +371,33 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/09/17.%20Letter%20Combinations%20of%20a%20Phone%20Number/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def findMedianSortedArrays(self, nums1: list, nums2: list) -&gt; float:</span><br><span class="line">        res=0</span><br><span class="line">        </span><br><span class="line">        while((len(nums1)+len(nums2))&gt;2):</span><br><span class="line">            if(len(nums1)==0):</span><br><span class="line">                nums2.pop(0)</span><br><span class="line">                nums2.pop()</span><br><span class="line">            elif(len(nums2)==0):</span><br><span class="line">                nums1.pop(0)</span><br><span class="line">                nums1.pop()</span><br><span class="line">            else:</span><br><span class="line">                if(nums1[0]&lt;=nums2[0]):</span><br><span class="line">                    nums1.pop(0)</span><br><span class="line">                else:</span><br><span class="line">                    nums2.pop(0)</span><br><span class="line">                if(len(nums1)==0):</span><br><span class="line">                    nums2.pop()</span><br><span class="line">                elif(len(nums2)==0):</span><br><span class="line">                    nums1.pop()</span><br><span class="line">                else:</span><br><span class="line">                    if(nums1[len(nums1)-1]&lt;=nums2[len(nums2)-1]):</span><br><span class="line">                        nums2.pop()</span><br><span class="line">                    else:</span><br><span class="line">                        nums1.pop()</span><br><span class="line">        if(len(nums1)==0):</span><br><span class="line">            if(len(nums2)==1):</span><br><span class="line">                res = nums2[0]/1</span><br><span class="line">            else:</span><br><span class="line">                res = (nums2[0]+nums2[1])/2</span><br><span class="line">        elif(len(nums2)==0):</span><br><span class="line">            if(len(nums1)==1):</span><br><span class="line">                res = nums1[0]/1</span><br><span class="line">            else:</span><br><span class="line">                res = (nums1[0]+nums1[1])/2</span><br><span class="line">        else:</span><br><span class="line">            res = (nums1[0]+nums2[0])/2</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+        <p>办法其实都一样，就是遍历，然后往里面添加新的，主要看代码实现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def letterCombinations(self, digits: str) -&gt; list[str]:</span><br><span class="line">        list1 = [&#x27;&#x27;, &#x27;&#x27;, &#x27;abc&#x27;, &#x27;def&#x27;, &#x27;ghi&#x27;, &#x27;jkl&#x27;, &#x27;mno&#x27;, &#x27;pqrs&#x27;, &#x27;tuv&#x27;, &#x27;wxyz&#x27;]</span><br><span class="line">        list2 = [&#x27;&#x27;]</span><br><span class="line">        list3 = []</span><br><span class="line">        for i in digits:</span><br><span class="line">            i = int(i)</span><br><span class="line">            for j in list2:</span><br><span class="line">                for k in list1[i]:</span><br><span class="line">                    list3.append(j+k)</span><br><span class="line">            list2 = list3</span><br><span class="line">            list3=[]</span><br><span class="line">        return list2 if list2!=[&quot;&quot;] else []</span><br></pre></td></tr></table></figure>
 
-<p>无优化</p>
+<p>递归实现：</p>
+<ul>
+<li>办法和我那个一样，用递归取代了对digits的遍历这个操作（他为了保证顺序，是从最后面的开始生成，因为递归是反着推的）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    # @param &#123;string&#125; digits</span><br><span class="line">    # @return &#123;string[]&#125;</span><br><span class="line">    def letterCombinations(self, digits):</span><br><span class="line">        mapping = &#123;&#x27;2&#x27;: &#x27;abc&#x27;, &#x27;3&#x27;: &#x27;def&#x27;, &#x27;4&#x27;: &#x27;ghi&#x27;, &#x27;5&#x27;: &#x27;jkl&#x27;, </span><br><span class="line">                   &#x27;6&#x27;: &#x27;mno&#x27;, &#x27;7&#x27;: &#x27;pqrs&#x27;, &#x27;8&#x27;: &#x27;tuv&#x27;, &#x27;9&#x27;: &#x27;wxyz&#x27;&#125;</span><br><span class="line">        if len(digits) == 0:</span><br><span class="line">            return []</span><br><span class="line">        if len(digits) == 1:</span><br><span class="line">            return list(mapping[digits[0]])</span><br><span class="line">        prev = self.letterCombinations(digits[:-1])</span><br><span class="line">        additional = mapping[digits[-1]]</span><br><span class="line">        return [s + c for s in prev for c in additional]</span><br></pre></td></tr></table></figure>
+
+<p>借助<code>reduce</code>实现：</p>
+<ul>
+<li><p>reduce这个函数在列表中前面的数据对后面的数据有影响时很有用</p>
+</li>
+<li><p>解释一下reduce使用：</p>
+<ol>
+<li>第一个参数是函数（函数可以自定义，有两个参数）</li>
+<li>第二个参数是需要进行操作的列表</li>
+<li>第三个参数是可选的，写了就从它和列表的第一个开始，没写就从列表的第一个第二个开始</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    # @return a list of strings, [s1, s2]</span><br><span class="line">    def letterCombinations(self, digits):</span><br><span class="line">        if &#x27;&#x27; == digits: return []</span><br><span class="line">        kvmaps = &#123;</span><br><span class="line">            &#x27;2&#x27;: &#x27;abc&#x27;,</span><br><span class="line">            &#x27;3&#x27;: &#x27;def&#x27;,</span><br><span class="line">            &#x27;4&#x27;: &#x27;ghi&#x27;,</span><br><span class="line">            &#x27;5&#x27;: &#x27;jkl&#x27;,</span><br><span class="line">            &#x27;6&#x27;: &#x27;mno&#x27;,</span><br><span class="line">            &#x27;7&#x27;: &#x27;pqrs&#x27;,</span><br><span class="line">            &#x27;8&#x27;: &#x27;tuv&#x27;,</span><br><span class="line">            &#x27;9&#x27;: &#x27;wxyz&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">        return reduce(lambda acc, digit: [x + y for x in acc for y in kvmaps[digit]], digits, [&#x27;&#x27;])</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -389,7 +407,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://franky-jia.github.io/2022/04/30/4.%20Median%20of%20Two%20Sorted%20Arrays/" title="4. Median of Two Sorted Arrays" target="_blank" rel="external">https://franky-jia.github.io/2022/04/30/4. Median of Two Sorted Arrays/</a>
+      <a href="https://franky-jia.github.io/2022/05/09/17.%20Letter%20Combinations%20of%20a%20Phone%20Number/" title="17. Letter Combinations of a Phone Number" target="_blank" rel="external">https://franky-jia.github.io/2022/05/09/17. Letter Combinations of a Phone Number/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -430,12 +448,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2022/05/01/5.%20Longest%20Palindromic%20Substring/" title="5. Longest Palindromic Substring"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/2022/05/10/19.%20Remove%20Nth%20Node%20From%20End%20of%20List/" title="19. Remove Nth Node From End of List"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2022/04/30/3.%20Longest%20Substring%20Without%20Repeating%20Characters/" title="3. Longest Substring Without Repeating Characters"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/05/08/15.%203Sum/" title="15. 3Sum"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
