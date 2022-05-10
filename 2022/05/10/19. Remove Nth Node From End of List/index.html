@@ -18,15 +18,15 @@
   
   
   <title>19. Remove Nth Node From End of List | Hexo</title>
-  <meta name="description" content="自己的思路有点复杂，没有从指针这个角度来进行考虑，导致比较臃肿，而且不好用。 别人的思路：选出两个指针，间隔n个距离，一起向后移动，一个到终点，另一个指针位置就是需要的节点 根本愿意还是积累不够，还在从队列的角度来思考链表的问题，以后遇到间隔问题首先想到用双指针解决。已经思维定势了，不是什么好事 123456789101112class Solution:    def removeNthFrom">
+  <meta name="description" content="自己的思路有点复杂，没有从指针这个角度来进行考虑，导致比较臃肿，而且不好用。 别人的思路：选出两个指针，间隔n个距离，一起向后移动，一个到终点，另一个指针位置就是需要的节点 根本原因还是积累不够，还在从队列的角度来思考链表的问题，以后遇到间隔问题首先想到用双指针解决。已经思维定势了，不是什么好事 123456789101112class Solution:    def removeNthFrom">
 <meta property="og:type" content="article">
 <meta property="og:title" content="19. Remove Nth Node From End of List">
 <meta property="og:url" content="https://franky-jia.github.io/2022/05/10/19.%20Remove%20Nth%20Node%20From%20End%20of%20List/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="自己的思路有点复杂，没有从指针这个角度来进行考虑，导致比较臃肿，而且不好用。 别人的思路：选出两个指针，间隔n个距离，一起向后移动，一个到终点，另一个指针位置就是需要的节点 根本愿意还是积累不够，还在从队列的角度来思考链表的问题，以后遇到间隔问题首先想到用双指针解决。已经思维定势了，不是什么好事 123456789101112class Solution:    def removeNthFrom">
+<meta property="og:description" content="自己的思路有点复杂，没有从指针这个角度来进行考虑，导致比较臃肿，而且不好用。 别人的思路：选出两个指针，间隔n个距离，一起向后移动，一个到终点，另一个指针位置就是需要的节点 根本原因还是积累不够，还在从队列的角度来思考链表的问题，以后遇到间隔问题首先想到用双指针解决。已经思维定势了，不是什么好事 123456789101112class Solution:    def removeNthFrom">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-10T03:38:25.000Z">
-<meta property="article:modified_time" content="2022-05-10T03:42:46.069Z">
+<meta property="article:modified_time" content="2022-05-10T05:54:19.573Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="LeetCode Top Questions">
@@ -379,7 +379,7 @@
       
         <p>自己的思路有点复杂，没有从指针这个角度来进行考虑，导致比较臃肿，而且不好用。</p>
 <h5 id="别人的思路："><a href="#别人的思路：" class="headerlink" title="别人的思路："></a>别人的思路：</h5><p>选出两个指针，间隔n个距离，一起向后移动，一个到终点，另一个指针位置就是需要的节点</p>
-<p>根本愿意还是积累不够，还在从队列的角度来思考链表的问题，以后遇到间隔问题首先想到用双指针解决。已经思维定势了，不是什么好事</p>
+<p>根本原因还是积累不够，还在从队列的角度来思考链表的问题，以后遇到间隔问题首先想到用双指针解决。已经思维定势了，不是什么好事</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def removeNthFromEnd(self, head, n):</span><br><span class="line">        fast = slow = head</span><br><span class="line">        for _ in range(n):</span><br><span class="line">            fast = fast.next</span><br><span class="line">        if not fast:</span><br><span class="line">            return head.next</span><br><span class="line">        while fast.next:</span><br><span class="line">            fast = fast.next</span><br><span class="line">            slow = slow.next</span><br><span class="line">        slow.next = slow.next.next</span><br><span class="line">        return head</span><br></pre></td></tr></table></figure>
 
 
