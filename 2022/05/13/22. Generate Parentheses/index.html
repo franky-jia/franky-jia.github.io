@@ -26,7 +26,7 @@
 <meta property="og:description" content="思路其实不复杂，有点像动态规划，在任意节点可以生成 (或者 )，但是，去除掉所有right&gt;left 的可能性，因为这样会导致括号无法闭合，然后把所有成功了的可能因素放进准备好的 list中，以我现在的代码能力写出来并不轻松，可以留下来以后再练习，加个practice tag  跟二叉树也很像，每层都添加括号，然后舍弃那些不满足条件的分支（括号无法闭合的分支），最后在最下面一层添加进list">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-13T01:21:29.000Z">
-<meta property="article:modified_time" content="2022-05-13T01:34:26.595Z">
+<meta property="article:modified_time" content="2022-05-13T07:03:47.133Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="LeetCode Top Questions">
@@ -380,7 +380,18 @@
       
         <p>思路其实不复杂，有点像<strong>动态规划</strong>，在任意节点可以生成 <code>(</code>或者 <code>)</code>，但是，去除掉所有<code>right</code>&gt;<code>left</code> 的可能性，因为这样会导致括号无法闭合，然后把所有成功了的可能因素放进准备好的 <code>list</code>中，以我现在的代码能力写出来并不轻松，可以留下来以后再练习，加个<code>practice</code> <code>tag</code> </p>
 <p>跟<strong>二叉树</strong>也很像，每层都添加括号，然后舍弃那些<strong>不满足条件</strong>的分支（括号无法闭合的分支），最后在最下面一层添加进<code>list</code>，添加左括号的逻辑写在添加右括号的上面，保证 <code>list </code> 中 <code>string</code> 的排列<strong>顺序</strong>，还是需要练啊</p>
+<h5 id="二叉树的理解："><a href="#二叉树的理解：" class="headerlink" title="二叉树的理解："></a>二叉树的理解：</h5><p>通过这个题感觉理解加深了一些，在什么情况下使用二叉树：在这种后续添加存在两种可能的时候用到。如果存在多种可能性，那就多叉树，无所谓的，二叉树跟多叉树可能只是使用场景的区别，无非就是加上一行分支代码代表多一种可能性</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line"># @param &#123;integer&#125; n</span><br><span class="line"># @return &#123;string[]&#125;</span><br><span class="line">def generateParenthesis(self, n):</span><br><span class="line">    if not n:</span><br><span class="line">        return []</span><br><span class="line">    left, right, ans = n, n, []</span><br><span class="line">    self.dfs(left,right, ans, &quot;&quot;)</span><br><span class="line">    return ans</span><br><span class="line"></span><br><span class="line">def dfs(self, left, right, ans, string):</span><br><span class="line">    if right &lt; left:</span><br><span class="line">        return</span><br><span class="line">    if not left and not right:</span><br><span class="line">        ans.append(string)</span><br><span class="line">        return</span><br><span class="line">    if left:</span><br><span class="line">        self.dfs(left-1, right, ans, string + &quot;(&quot;)</span><br><span class="line">    if right:</span><br><span class="line">        self.dfs(left, right-1, ans, string + &quot;)&quot;)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>自己按着思路写的算法：</p>
+<ol>
+<li>这样调用同一个 <code>Class</code> 下的函数 <code>self.dfs()</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def generateParenthesis(self, n: int) -&gt; List[str]:</span><br><span class="line">        </span><br><span class="line">        list1=[]</span><br><span class="line">        if n==0:</span><br><span class="line">            return []</span><br><span class="line">        def dfs(left, right, s, list1):</span><br><span class="line">            if right&lt;left:</span><br><span class="line">                return</span><br><span class="line">            if not left and not right :</span><br><span class="line">                return list1.append(s)</span><br><span class="line">            if left:</span><br><span class="line">                dfs(left-1, right, s+&#x27;(&#x27;, list1)</span><br><span class="line">            if right:</span><br><span class="line">                dfs(left, right-1, s+&#x27;)&#x27;, list1)</span><br><span class="line">        dfs(n,n,&#x27;&#x27;,list1)</span><br><span class="line">        return list1</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     <div class="article-footer">
