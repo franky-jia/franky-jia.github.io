@@ -17,23 +17,23 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>10. Regular Expression Matching | Hexo</title>
-  <meta name="description" content="以后遇到这种题，一律只考虑正则表达式。手写比较困难，需要了解dp，也就是背包算法，自创的办法比较臃肿，已经舍弃了。自己写的正则匹配 123456789101112import reclass Solution:    def isMatch(self, s: str, p: str) -&gt; bool:                pattern &#x3D; re.compile(p)">
+  <title>22. Generate Parentheses | Hexo</title>
+  <meta name="description" content="思路其实不复杂，有点像动态规划，在任意节点可以生成 (或者 )，但是，去除掉所有right&gt;left 的可能性，因为这样会导致括号无法闭合，然后把所有成功了的可能因素放进准备好的 list中，以我现在的代码能力写出来并不轻松，可以留下来以后再练习，加个practice tag  跟二叉树也很像，每层都添加括号，然后舍弃那些不满足条件的分支（括号无法闭合的分支），最后在最下面一层添加进list">
 <meta property="og:type" content="article">
-<meta property="og:title" content="10. Regular Expression Matching">
-<meta property="og:url" content="https://franky-jia.github.io/2022/05/06/10.%20Regular%20Expression%20Matching/index.html">
+<meta property="og:title" content="22. Generate Parentheses">
+<meta property="og:url" content="https://franky-jia.github.io/2022/05/13/22.%20Generate%20Parentheses/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="以后遇到这种题，一律只考虑正则表达式。手写比较困难，需要了解dp，也就是背包算法，自创的办法比较臃肿，已经舍弃了。自己写的正则匹配 123456789101112import reclass Solution:    def isMatch(self, s: str, p: str) -&gt; bool:                pattern &#x3D; re.compile(p)">
+<meta property="og:description" content="思路其实不复杂，有点像动态规划，在任意节点可以生成 (或者 )，但是，去除掉所有right&gt;left 的可能性，因为这样会导致括号无法闭合，然后把所有成功了的可能因素放进准备好的 list中，以我现在的代码能力写出来并不轻松，可以留下来以后再练习，加个practice tag  跟二叉树也很像，每层都添加括号，然后舍弃那些不满足条件的分支（括号无法闭合的分支），最后在最下面一层添加进list">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-05-06T08:23:36.000Z">
-<meta property="article:modified_time" content="2022-05-07T02:23:59.682Z">
+<meta property="article:published_time" content="2022-05-13T01:21:29.000Z">
+<meta property="article:modified_time" content="2022-05-13T01:34:26.595Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="LeetCode Top Questions">
-<meta property="article:tag" content="dp">
+<meta property="article:tag" content="continue practice">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://franky-jia.github.io/2022/05/06/10.%20Regular%20Expression%20Matching/index.html">
+  <link rel="canonical" href="https://franky-jia.github.io/2022/05/13/22.%20Generate%20Parentheses/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -343,14 +343,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-10. Regular Expression Matching" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-22. Generate Parentheses" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      10. Regular Expression Matching
+      22. Generate Parentheses
     </h1>
   
 
@@ -358,38 +358,29 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/05/06/10.%20Regular%20Expression%20Matching/" class="article-date">
-	  <time datetime="2022-05-06T08:23:36.000Z" itemprop="datePublished">2022-05-06</time>
+	<a href="/2022/05/13/22.%20Generate%20Parentheses/" class="article-date">
+	  <time datetime="2022-05-13T01:21:29.000Z" itemprop="datePublished">2022-05-13</time>
 	</a>
 </span>
         
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/LeetCode/" rel="tag">LeetCode</a>, <a class="article-tag-link-link" href="/tags/LeetCode-Top-Questions/" rel="tag">LeetCode Top Questions</a>, <a class="article-tag-link-link" href="/tags/dp/" rel="tag">dp</a>
+	<a class="article-tag-link-link" href="/tags/LeetCode/" rel="tag">LeetCode</a>, <a class="article-tag-link-link" href="/tags/LeetCode-Top-Questions/" rel="tag">LeetCode Top Questions</a>, <a class="article-tag-link-link" href="/tags/continue-practice/" rel="tag">continue practice</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/06/10.%20Regular%20Expression%20Matching/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/13/22.%20Generate%20Parentheses/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>以后遇到这种题，一律只考虑正则表达式。手写比较困难，需要了解dp，也就是背包算法，自创的办法比较臃肿，已经舍弃了。自己写的正则匹配</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">class Solution:</span><br><span class="line">    def isMatch(self, s: str, p: str) -&gt; bool:</span><br><span class="line">        </span><br><span class="line">        pattern = re.compile(p)</span><br><span class="line">        res = pattern.search(s)</span><br><span class="line">        if res and res[0] == s:</span><br><span class="line">            return True</span><br><span class="line">        else:</span><br><span class="line">            return False</span><br><span class="line">test = Solution()</span><br><span class="line">test.isMatch(&quot;ab&quot;,&quot;.*c&quot;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="dp-学习"><a href="#dp-学习" class="headerlink" title="dp 学习"></a>dp 学习</h4><ul>
-<li><code>[[False]*(n+1) for _ in range(m+1)]</code> 创建二位数组，其中元素都是False</li>
-</ul>
-<p>所谓的<code>dp</code>算法就是考虑所有的可能路线再随着程序进程舍弃变为不可能的路线，直到找到最后的合理路线。</p>
-<p>我觉得这个算法跟<code>dp</code>没什么关系，主要是很创新性的引入了二位数组来装载所有的可能性，知道所谓的<code>dp</code>算法没什么用，二位数组的创新思想更加重要</p>
-<p>然后是这个二位数组是怎么操作的，首先行和列分别代表字符串s和p，其中下标0为空的，从下标1开始。以[0,0]为起始，所以给[0,0]一个true，然后二位数组内部任意空间是判断s p中的某个下标对应的字符是否能匹配（同时需要这条路径的前面是通的）。然后如果[-1, -1]这个也为true，就说明这条路径从头到结束都是通的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def isMatch(self, s, p):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type s: str</span><br><span class="line">        :type p: str</span><br><span class="line">        :rtype: bool</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        n = len(s)</span><br><span class="line">        m = len(p)</span><br><span class="line">        dp = [[False]*(n+1) for _ in range(m+1)]</span><br><span class="line">        dp[0][0] = True</span><br><span class="line">        for i in range(m):</span><br><span class="line">            for j in range(-1, n):</span><br><span class="line">                if j == -1:</span><br><span class="line">                    if p[i] == &quot;*&quot;:</span><br><span class="line">                        dp[i+1][j+1] = dp[i-1][j+1]</span><br><span class="line">                    continue</span><br><span class="line">                if p[i].isalpha():</span><br><span class="line">                    if p[i] == s[j]:</span><br><span class="line">                        dp[i+1][j+1] = dp[i][j]</span><br><span class="line">                elif p[i] == &quot;.&quot;:</span><br><span class="line">                    dp[i+1][j+1] = dp[i][j]</span><br><span class="line">                else:</span><br><span class="line">                    dp[i+1][j+1] = dp[i-1][j+1] or (dp[i+1][j] and (p[i-1] == s[j] or p[i-1] == &quot;.&quot;))</span><br><span class="line">        return dp[-1][-1]</span><br></pre></td></tr></table></figure>
-
-
+        <p>思路其实不复杂，有点像<strong>动态规划</strong>，在任意节点可以生成 <code>(</code>或者 <code>)</code>，但是，去除掉所有<code>right</code>&gt;<code>left</code> 的可能性，因为这样会导致括号无法闭合，然后把所有成功了的可能因素放进准备好的 <code>list</code>中，以我现在的代码能力写出来并不轻松，可以留下来以后再练习，加个<code>practice</code> <code>tag</code> </p>
+<p>跟<strong>二叉树</strong>也很像，每层都添加括号，然后舍弃那些<strong>不满足条件</strong>的分支（括号无法闭合的分支），最后在最下面一层添加进<code>list</code>，添加左括号的逻辑写在添加右括号的上面，保证 <code>list </code> 中 <code>string</code> 的排列<strong>顺序</strong>，还是需要练啊</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line"># @param &#123;integer&#125; n</span><br><span class="line"># @return &#123;string[]&#125;</span><br><span class="line">def generateParenthesis(self, n):</span><br><span class="line">    if not n:</span><br><span class="line">        return []</span><br><span class="line">    left, right, ans = n, n, []</span><br><span class="line">    self.dfs(left,right, ans, &quot;&quot;)</span><br><span class="line">    return ans</span><br><span class="line"></span><br><span class="line">def dfs(self, left, right, ans, string):</span><br><span class="line">    if right &lt; left:</span><br><span class="line">        return</span><br><span class="line">    if not left and not right:</span><br><span class="line">        ans.append(string)</span><br><span class="line">        return</span><br><span class="line">    if left:</span><br><span class="line">        self.dfs(left-1, right, ans, string + &quot;(&quot;)</span><br><span class="line">    if right:</span><br><span class="line">        self.dfs(left, right-1, ans, string + &quot;)&quot;)</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-footer">
@@ -398,7 +389,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://franky-jia.github.io/2022/05/06/10.%20Regular%20Expression%20Matching/" title="10. Regular Expression Matching" target="_blank" rel="external">https://franky-jia.github.io/2022/05/06/10. Regular Expression Matching/</a>
+      <a href="https://franky-jia.github.io/2022/05/13/22.%20Generate%20Parentheses/" title="22. Generate Parentheses" target="_blank" rel="external">https://franky-jia.github.io/2022/05/13/22. Generate Parentheses/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -438,13 +429,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/05/07/11.%20Container%20With%20Most%20Water/" title="11. Container With Most Water"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/05/05/%E7%88%AC%E5%8F%96mp3/" title="一次使用爬虫解决个人mp3曲库问题实践"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/05/12/21.%20Merge%20Two%20Sorted%20Lists/" title="21. Merge Two Sorted Lists"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
