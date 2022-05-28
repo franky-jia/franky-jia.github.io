@@ -17,23 +17,18 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>11. Container With Most Water | Hexo</title>
-  <meta name="description" content="思路其实很简单，但是并没有很好想出来 由两侧开始向中间聚集，在这个过程中不断把短板替换成更长的板，比较面积，直到在中间相遇 1234567891011121314class Solution:    def maxArea(self, height: List[int]) -&gt; int:        p1 &#x3D; 0  # first (left) pointer        p2 &#x3D; le">
-<meta property="og:type" content="article">
-<meta property="og:title" content="11. Container With Most Water">
-<meta property="og:url" content="https://franky-jia.github.io/2022/05/07/11.%20Container%20With%20Most%20Water/index.html">
+  <title>Hexo</title>
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://franky-jia.github.io/2022/05/27/Untitled/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="思路其实很简单，但是并没有很好想出来 由两侧开始向中间聚集，在这个过程中不断把短板替换成更长的板，比较面积，直到在中间相遇 1234567891011121314class Solution:    def maxArea(self, height: List[int]) -&gt; int:        p1 &#x3D; 0  # first (left) pointer        p2 &#x3D; le">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-05-07T09:39:26.000Z">
-<meta property="article:modified_time" content="2022-05-08T03:32:18.776Z">
+<meta property="article:published_time" content="2022-05-27T08:22:30.598Z">
+<meta property="article:modified_time" content="2022-05-27T08:22:30.598Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="LeetCode">
-<meta property="article:tag" content="LeetCode Top Questions">
-<meta property="article:tag" content="unfinished">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://franky-jia.github.io/2022/05/07/11.%20Container%20With%20Most%20Water/index.html">
+  <link rel="canonical" href="https://franky-jia.github.io/2022/05/27/Untitled/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -343,46 +338,29 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-11. Container With Most Water" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Untitled" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
-      
-        
-  
-    <h1 class="article-title" itemprop="name">
-      11. Container With Most Water
-    </h1>
-  
-
       
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/05/07/11.%20Container%20With%20Most%20Water/" class="article-date">
-	  <time datetime="2022-05-07T09:39:26.000Z" itemprop="datePublished">2022-05-07</time>
+	<a href="/2022/05/27/Untitled/" class="article-date">
+	  <time datetime="2022-05-27T08:22:30.598Z" itemprop="datePublished">2022-05-27</time>
 	</a>
 </span>
         
         
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/LeetCode/" rel="tag">LeetCode</a>, <a class="article-tag-link-link" href="/tags/LeetCode-Top-Questions/" rel="tag">LeetCode Top Questions</a>, <a class="article-tag-link-link" href="/tags/unfinished/" rel="tag">unfinished</a>
-  </span>
-
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/07/11.%20Container%20With%20Most%20Water/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/27/Untitled/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>思路其实很简单，但是并没有很好想出来</p>
-<p>由两侧开始向中间聚集，在这个过程中不断把短板替换成更长的板，比较面积，直到在中间相遇</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def maxArea(self, height: List[int]) -&gt; int:</span><br><span class="line">        p1 = 0  # first (left) pointer</span><br><span class="line">        p2 = len(height) - 1  # second (right) pointer</span><br><span class="line">        max_area = 0</span><br><span class="line">        while p1 != p2:</span><br><span class="line">            if height[p1] &gt; height[p2]:</span><br><span class="line">                area = height[p2] * (p2 - p1)  # height of smaller edge multiplies on length</span><br><span class="line">                p2 -= 1  # changing smaller edge</span><br><span class="line">            else:</span><br><span class="line">                area = height[p1] * (p2 - p1)</span><br><span class="line">                p1 += 1</span><br><span class="line">            if area &gt; max_area: max_area = area  # increasing max area if possible</span><br><span class="line">        return max_area</span><br></pre></td></tr></table></figure>
-
-
+        
       
     </div>
     <div class="article-footer">
@@ -391,7 +369,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://franky-jia.github.io/2022/05/07/11.%20Container%20With%20Most%20Water/" title="11. Container With Most Water" target="_blank" rel="external">https://franky-jia.github.io/2022/05/07/11. Container With Most Water/</a>
+      <a href="https://franky-jia.github.io/2022/05/27/Untitled/" title="" target="_blank" rel="external">https://franky-jia.github.io/2022/05/27/Untitled/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -422,6 +400,10 @@
   </article>
   
     
+  <section id="comments">
+  	
+  </section>
+
 
   
 </div>
@@ -432,12 +414,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2022/05/08/15.%203Sum/" title="15. 3Sum"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/2022/05/27/%E9%87%8D%E5%AD%A6%E5%89%8D%E7%AB%AF/1-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%8F%8A%E8%8C%83%E5%BC%8F/" title="1-函数式编程及范式"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2022/05/06/10.%20Regular%20Expression%20Matching/" title="10. Regular Expression Matching"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/05/21/Django%E5%AD%A6%E4%B9%A0-%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/" title="(no title)"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -518,6 +500,8 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
 
 
 
