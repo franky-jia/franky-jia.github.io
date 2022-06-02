@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Hexo</title>
+  <meta name="description" content="一面技巧 准备要充分 知识要系统 沟通要简洁 内心要诚实 态度要谦虚 回答要灵活  页面布局 三栏布局（左右宽度固定，中间自适应。或者上下高度固定，中间自适应） 好像flex最好用，其次float，其次用position，（ 表格布局，网格布局Grid ) 语义化 页面布局理解深刻 css 基础要扎实 掌握前沿技术 代码书写规范    CSS 盒模型 标准模型：content padding bo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://franky-jia.github.io/2022/05/30/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一面技巧 准备要充分 知识要系统 沟通要简洁 内心要诚实 态度要谦虚 回答要灵活  页面布局 三栏布局（左右宽度固定，中间自适应。或者上下高度固定，中间自适应） 好像flex最好用，其次float，其次用position，（ 表格布局，网格布局Grid ) 语义化 页面布局理解深刻 css 基础要扎实 掌握前沿技术 代码书写规范    CSS 盒模型 标准模型：content padding bo">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-30T03:06:22.563Z">
+<meta property="article:modified_time" content="2022-06-02T09:12:01.644Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://franky-jia.github.io/2022/05/30/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/%E5%9F%BA%E7%A1%80/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/franky-jia" target="_blank">
+          <img class="img-circle img-rotate" src="/images/aaa.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">取名很困难</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/" rel="tag">Django</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode-Top-Questions/" rel="tag">LeetCode Top Questions</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/continue-practice/" rel="tag">continue practice</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dp/" rel="tag">dp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/requests/" rel="tag">requests</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unfinished/" rel="tag">unfinished</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Django/" style="font-size: 13.33px;">Django</a> <a href="/tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="/tags/LeetCode/" style="font-size: 14px;">LeetCode</a> <a href="/tags/LeetCode-Top-Questions/" style="font-size: 14px;">LeetCode Top Questions</a> <a href="/tags/continue-practice/" style="font-size: 13px;">continue practice</a> <a href="/tags/dp/" style="font-size: 13px;">dp</a> <a href="/tags/javascript/" style="font-size: 13px;">javascript</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/requests/" style="font-size: 13px;">requests</a> <a href="/tags/unfinished/" style="font-size: 13.67px;">unfinished</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 13px;">爬虫</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/30/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/%E5%9F%BA%E7%A1%80/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-30T03:06:22.563Z" itemprop="datePublished">2022-05-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/30/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-30T01:05:38.294Z" itemprop="datePublished">2022-05-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/30/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/%E6%A6%82%E8%BF%B0/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-30T00:46:41.740Z" itemprop="datePublished">2022-05-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/28/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/ES6/" class="title">ES6</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-28T06:50:52.000Z" itemprop="datePublished">2022-05-28</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/27/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/1-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E5%8F%8A%E8%8C%83%E5%BC%8F/" class="title">1-函数式编程及范式</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-27T08:28:04.000Z" itemprop="datePublished">2022-05-27</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-web前端面试准备/基础" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/30/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/%E5%9F%BA%E7%A1%80/" class="article-date">
+	  <time datetime="2022-05-30T03:06:22.563Z" itemprop="datePublished">2022-05-30</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/30/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/%E5%9F%BA%E7%A1%80/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h5 id="一面技巧"><a href="#一面技巧" class="headerlink" title="一面技巧"></a>一面技巧</h5><ul>
+<li>准备要充分</li>
+<li>知识要系统</li>
+<li>沟通要简洁</li>
+<li>内心要诚实</li>
+<li>态度要谦虚</li>
+<li>回答要灵活</li>
+</ul>
+<h5 id="页面布局"><a href="#页面布局" class="headerlink" title="页面布局"></a>页面布局</h5><ul>
+<li>三栏布局（左右宽度固定，中间自适应。或者上下高度固定，中间自适应）<ul>
+<li>好像flex最好用，其次float，其次用position，（ 表格布局，网格布局Grid )</li>
+<li>语义化</li>
+<li>页面布局理解深刻</li>
+<li>css 基础要扎实</li>
+<li>掌握前沿技术</li>
+<li>代码书写规范</li>
+</ul>
+</li>
+</ul>
+<h5 id="CSS-盒模型"><a href="#CSS-盒模型" class="headerlink" title="CSS 盒模型"></a>CSS 盒模型</h5><ul>
+<li><p>标准模型：<code>content</code> <code>padding</code> <code>border</code> <code>margin</code> ，盒模型的宽高是content的宽高</p>
+</li>
+<li><p>IE盒模型：宽高是 content + padding + border</p>
+</li>
+<li><p>盒模型转化：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">box-sizing: content-box</span><br><span class="line">box-sizing: border-box</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JS获取&#x2F;设置盒模型对应的宽和高</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dom.style.width/height    获取内置的宽高（写DOM元素上的）</span><br><span class="line">dom.currentStyle.width/height    获取当前渲染画面的宽高（只有IE支持）</span><br><span class="line"> window.getComputedStyle(dom).width/height   通用性更好</span><br><span class="line"> dom.getBoundingClientRect().width/height	获取相对页面左上部边缘的坐标与宽高</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>解释边距重叠</p>
+</li>
+<li><p>BFC（边距重叠解决方案），块级格式化上下文，好像就是这一块算是一个了，再怎么折腾就占着这块区域，但是可以高出一层来覆盖其他区域</p>
+</li>
+</ul>
+<h5 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h5><ul>
+<li><p>基本概念：DOM事件的级别</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">element.onclick = function()&#123;&#125;</span><br><span class="line">element.addEventListener(&#x27;click&#x27;, function()&#123;&#125;, false)    false代表冒泡，true代表捕获</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DOM事件模型：捕获、冒泡</p>
+</li>
+<li><p>DOM事件流：</p>
+<ul>
+<li>事件触发后（鼠标点击）通过捕获进入到目标阶段（找到点击的哪里），再冒泡到windows对象上执行事件</li>
+</ul>
+</li>
+<li><p>描述DOM事件捕获的具体流程</p>
+<ul>
+<li>window -&gt; document -&gt; html -&gt; body -&gt; 其他嵌套元素</li>
+</ul>
+</li>
+<li><p>Event对象的常见应用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">event.preventDefault()     阻止默认事件</span><br><span class="line">event.stopPropagation()     阻止冒泡，防止父元素的事件被执行</span><br><span class="line">event.stopImmediatePropagation()     事件响应优先级</span><br><span class="line">event.currentTarget()     当前绑定事件的元素</span><br><span class="line">event.target   表示当前元素 （实现事件委托，把事件绑定在父元素上，然后用这个辨别哪个子元素被触发事件）</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>自定义事件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const eve = new Event(&#x27;custome&#x27;)</span><br><span class="line">ev.addEventListener(&#x27;custome&#x27;, function()&#123;&#125;)</span><br><span class="line">ev.dispatchEvent(eve)  触发事件</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CustomEvent 可以传递参数 </span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h5><ul>
+<li>主要特点<ul>
+<li>无连接（没有持续化连接）</li>
+<li>无状态（无法确定身份）</li>
+</ul>
+</li>
+<li>HTTP报文的组成部分<ul>
+<li>请求报文<ul>
+<li>请求行（header里的第一行）、请求头（header除了第一行）、空行、请求体</li>
+</ul>
+</li>
+<li>响应报文<ul>
+<li>状态行（header里的第一行，有状态码）、响应头、空行、响应体</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>POST 和 GET的区别<ul>
+<li>GET在浏览器回退时是无害的，而POST会再次提交请求</li>
+<li>GET产生的URL地址可以被 收藏 或者被浏览器缓存，POST不可以</li>
+<li>GET请求只能进行 ur l编码，而POST支持多种编码方式</li>
+<li>GET有长度限制，并且只能是ASCII码，POST没有限制</li>
+<li>GET参数通过URL传递，POST放在Request body中</li>
+</ul>
+</li>
+<li>HTTP状态码<ul>
+<li>1XX：指示信息—表示继续处理</li>
+<li>2XX：成功</li>
+<li>3XX：重定向</li>
+<li>4XX：客户端错误</li>
+<li>5XX：服务器错误</li>
+<li>200：客户端请求成功</li>
+<li>206：客户发送了一个带有Range头的GET请求，服务器完成了它</li>
+<li>301：请求页面临时转移至新的 url</li>
+<li>304：客户端存在缓存文档，服务器告诉客户端可以使用缓存文件</li>
+<li>403：资源被禁止访问</li>
+<li>404：请求资源不存在</li>
+<li>500：服务器不可预知错误</li>
+<li>503：服务器过载</li>
+</ul>
+</li>
+<li>持久连接<ul>
+<li>使用 Keep-Alive 模式</li>
+</ul>
+</li>
+<li>管线化<ul>
+<li>用处不大，在持久连接的情况下，可以通过把分批次的请求和返回打包成一个批次的请求和返回，只有GET与 HEAD才可以</li>
+</ul>
+</li>
+</ul>
+<h5 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h5><ul>
+<li><p>类与实例</p>
+<ul>
+<li><p>类的声明</p>
+<ul>
+<li>&#96;&#96;&#96;<br>function Animal(name){<br>this.name &#x3D; name<br>}<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  class Animal2 &#123;</span><br><span class="line">  	constructor ()&#123;</span><br><span class="line">  		this.name = name</span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>生成实例</p>
+<ul>
+<li>&#96;&#96;&#96;<br>new Animal(‘one’)<br>new Animal2(‘two’)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">- 类与继承</span><br><span class="line"></span><br><span class="line">  1. 借助构造函数实现继承，子级构造函数**直接引入**父级构造函数并使其this改变指向。缺点是在父级构造函数的原型链上添加方法属性无法被子级构造函数继承，很显然</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+ function Parent1(){<br>   this.name &#x3D; ‘zero’<br> }<br> function Child1(){<br>   Parent1.call(this)<br>   this.gener &#x3D; ‘female’<br> }<br> &#x2F;&#x2F; 无法继承原型链上的属性方法<br> Parent1.prototype.say&#x3D;function(){<br>   console.log(‘say’+this.name)<br> }<br> const one &#x3D; new Child1()<br> one.say()   &#x2F;&#x2F;one.say is not a function <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. 原型链继承，子类可以继承父类原型链上的方法，因为把父类的实例挂载到了子类的原型链（`__proto__`）上了。缺点是所有子类都会受到原型链变动的影响，当子类改变原型链上的对象或是数组里的内容时候，其他子类也会收到影响（需要注意在该属性不存于数组或者对象时候，子类会自己生成该属性或者方法）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+ function Parent2(){<br>   this.name &#x3D; ‘zero’<br>   this.looks &#x3D; {<br>   eyes: ‘black’<br>   }<br> }<br> function Child2(){<br>   this.gener &#x3D; ‘femail’<br> }<br> Child2.prototype &#x3D; new Parent2()<br> const one &#x3D; new Child2()<br> const two &#x3D; new Child2()<br> &#x2F;&#x2F;改变父类对象中的eyes，子类都会改变<br> one.looks.eyes &#x3D; ‘red’<br> &#x2F;&#x2F;此时会在子类生成name覆盖父类的name<br> one.name &#x3D; ‘one’<br> console.log(one.looks.eyes, two.looks.eyes)   &#x2F;&#x2F;red red<br> console.log(one.name)  &#x2F;&#x2F;‘one’ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. 组合继承方式（通常方式），结合上面的两种方法。在原型链继承的基础上，把带obj的父类通过构造函数的继承方式（直接继承）来继承</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+ function Parent3(){<br>   this.name &#x3D; ‘zero’<br>   this.looks &#x3D; {<br>   eyes: ‘black’<br>   }<br> }<br> function Child3(){<br>   Parent1.call(this)<br>   this.gener &#x3D; ‘female’<br> }<br> Child1.prototype &#x3D; new Parent1()</li>
+</ul>
+<p> const one &#x3D; new Child1()<br> const two &#x3D; new Child1()</p>
+<p> one.looks.eyes &#x3D; ‘red’<br> console.log(one.looks.eyes, two.looks.eyes)</p>
+<p> Parent1.prototype.kind &#x3D; ‘human’<br> console.log(one.kind)<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">4. 组合继承的优化1。new实例的方式会使得 Child的实例 的 __proto__ 指向的是 Parent 的实例，造成的问题是，parent中的属性方法会在 Child这个层级存在，在Parent这个层级也存在，因此Parent这个层级是多余的，直接把Child挂载到Parent的原型链上即可</span><br><span class="line"></span><br></pre></td></tr></table></figure><br> function Parent4(){<br>     this.name &#x3D; ‘zero’<br>     this.looks &#x3D; {<br>         eyes: ‘black’<br>     }<br> }<br> function Child4(){<br>     Parent1.call(this)<br>     this.gener &#x3D; ‘female’<br> }<br> Child1.prototype &#x3D; Parent1.prototype<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">     </span><br><span class="line">5. 组合继承的优化2（完美方法）。在优化1的基础上实现了 子类 在 父类 原型链的下一级（父类此时由 `Object.create()`创建，是个空的实例）。我发现原型这个说法是不太好的，感觉叫做上一级实例会更好一些。最后再修改 `constructor` 就能足够完善了，也因为多了一个层级，所以可以自由修改 `constructor` </span><br><span class="line">  </span><br></pre></td></tr></table></figure><br> function Parent5(){<br>     this.name &#x3D; ‘zero’<br>     this.looks &#x3D; {<br>         eyes: ‘black’<br>     }<br> }<br> function Child5(){<br>     Parent1.call(this)<br>     this.gener &#x3D; ‘female’<br> }<br> Child5.prototype &#x3D; Object.create(Parent5.prototype)<br> Child5.prototype.constructor &#x3D; Child5<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">     </span><br><span class="line"></span><br><span class="line">##### 原型链</span><br><span class="line"></span><br><span class="line">- 创建对象有几种方法</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+<p>const o1 &#x3D; {name: ‘o1’}</p>
+<p>const o11 &#x3D; new Object({name: ‘o11’})</p>
+<p>const o2 &#x3D; function(){this.name&#x3D; ‘o2’}<br>const o22 &#x3D; new o2()</p>
+<p>const o3 &#x3D; {name: ‘o3’}<br>const o33 &#x3D; Object.create(o3)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 原型、构造函数、实例、原型链</span><br><span class="line"></span><br><span class="line">  - 原型对象</span><br><span class="line">    - 原型的 constructor 指向构造函数，构造函数的 prototype 指向 原型</span><br><span class="line">  - 构造函数</span><br><span class="line">    - 能用来 new 的就是构造函数，（也可以是不通过new的语法糖形式）</span><br><span class="line">  - 实例</span><br><span class="line">    - new 出来的就是实例。实例的 `__proto__` 指向的原型</span><br><span class="line">  - 原型链</span><br><span class="line">    - 通过 `__proto__` 来实现向上查找</span><br><span class="line">    - 构造函数的prototype指向原型对象，所以new出来的实例的 `__proto__` 指向原型对象</span><br><span class="line"></span><br><span class="line">- instanceof 的原理</span><br><span class="line"></span><br><span class="line">  - 构造函数的 `prototype` 与 实例的 `__proto__` 指向同一个</span><br><span class="line"></span><br><span class="line">- new运算符，</span><br><span class="line"></span><br><span class="line">  - 记录一下 call apply bind 的区别</span><br><span class="line"></span><br><span class="line">    - 功能都是把函数绑定到某个object上，同时函数中的this指向当前的object。call 一个参数是object，后面参数是函数所需参数，会立即执行。apply 第一个参数是object，后面参数是函数所需参数用[ ]包裹，会立即执行。bind 第一个参数是object，后面参数是函数所需参数，不会立即执行，而是返回一个this指向object的函数。好像没啥玩意，只要会一个 bind 就足够了，会call 可能会省代码</span><br><span class="line"></span><br><span class="line">  - 手写 new：</span><br><span class="line">    </span><br><span class="line">    -  `Object.create(fn.prototype)` 创建一个指向 fn.prototype（fn的原型） 的 空的实例</span><br><span class="line">    - fn.apply(o, rest) 是把 fn 绑定到原型链上，o已经在原型链上了，让fn里的this指向o就让通过fn生成的实例挂载到了fn原型的下面，也就是新的实例的 `__proto__`指向 fn的原型</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<p>  const new2 &#x3D; function(fn, …rest){<br>      const o &#x3D; Object.create(fn.prototype)<br>      const p &#x3D; fn.apply(o, rest)<br>      if(typeof p &#x3D;&#x3D;&#x3D;’Object’){<br>          return p<br>      }else{<br>              return o<br>      }<br>  }<br>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line"></span><br><span class="line">##### 通信（跨域通信、前后端通信）</span><br><span class="line"></span><br><span class="line">- 什么是同源策略及限制</span><br><span class="line"></span><br><span class="line">  - 同源策略：同一协议，同一域名，同一端口号</span><br><span class="line">  - 限制从一个源加载的文档或脚本与另一个源的资源进行交互，是一种隔离潜在恶意文件的安全机制</span><br><span class="line">  - 例子：</span><br><span class="line">    - Cookie、LocalStorage、IndexDB</span><br><span class="line">    - DOM 无法获得</span><br><span class="line">    - AJAX 请求不能发送</span><br><span class="line"></span><br><span class="line">- 前后端如何通信</span><br><span class="line"></span><br><span class="line">  - Ajax（同源）</span><br><span class="line">  - WebSockect （跨域）</span><br><span class="line">  - CORS （都支持）</span><br><span class="line"></span><br><span class="line">- 如何创建 Ajax （手写?）</span><br><span class="line"></span><br><span class="line">  - XMLHttpRequest 的工作流程</span><br><span class="line">  - 兼容性处理</span><br><span class="line">  - 事件的触发条件</span><br><span class="line">  - 事件的触发顺序</span><br><span class="line"></span><br><span class="line">- 跨域通信的几种方式（没用过）</span><br><span class="line"></span><br><span class="line">  - JSONP</span><br><span class="line"></span><br><span class="line">    - 首先假设前端与后端处于不同的源</span><br><span class="line"></span><br><span class="line">    - 前端首先在 &lt;script&gt; 中写好一个回调函数，约定拿到跨域资源在前端的使用方式，利用 &lt;script&gt;  标签的跨域特性，发送一个get请求给后端（访问url就是get请求），后端等待获取 get 请求</span><br><span class="line"></span><br><span class="line">    - 后端通过拿到get请求后，返回一段 js 的 Json 形式的自执行函数，前端的 &lt;script&gt; 标签拿到对应的跨域资源进行解析，跨域的资源中包含传递的数据，此时在其中的自执行函数直接调用传参就能把资源直接供前端调用（没有自执行函数只传参卵用没有，前端拿到资源必须调用函数才能利用起来）</span><br><span class="line"></span><br><span class="line">    - 前端部分代码</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>    <script><br>        function onResponse(sourse){<br>            console.log(sourse)<br>        }<br>    </script><br>    <script src="localhost:9000/api"></script><br>    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 后端部分代码</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>    const http &#x3D; require(‘http’);<br>    http.createServer((req, res) &#x3D;&gt; {<br>        if (req.url &#x3D;&#x3D;&#x3D; ‘&#x2F;api’) {<br>            let posts &#x3D; [‘js’, ‘php’];<br>            res.end(<code>onResponse($&#123;JSON.stringify(posts)&#125;)</code>);<br>        }<br>    })<br>    .listen(9000, () &#x3D;&gt; {<br>        console.log(9000)<br>    })<br>    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">  - Hash   略过，通过 url 传递</span><br><span class="line"></span><br><span class="line">  - postMessage    略过</span><br><span class="line"></span><br><span class="line">  - WebScoket   较新的标准，简单好用</span><br><span class="line"></span><br><span class="line">  - CORS   也是比较新的跨站方式  好像就是后端配置一下，前端用特定的方式访问就行了，然后浏览器的默认策略就会支持跨站访问了</span><br><span class="line"></span><br><span class="line">##### 安全（CSRF、XSS）没啥印象了</span><br><span class="line"></span><br><span class="line">- CSRF</span><br><span class="line">  - 跨站请求伪造</span><br><span class="line">    - 原理：用户获得了网站A的cookie认证，然后在访问网站B的时候触发了跳转网站A的行为，并执行了用户的操作，此时该用户触发了一些不属于自己的行为（好像cookie没有泄露？）</span><br><span class="line">    - 防御：Token验证（再加验证信息），Referer验证（校验跳转页面的来源），隐藏令牌（跟Token差不多，更隐蔽一些）</span><br><span class="line">- XSS</span><br><span class="line">  - 跨站脚本攻击</span><br><span class="line">    - 原理：就是注入JS</span><br><span class="line">    - 防御：让脚本无法执行</span><br><span class="line"></span><br><span class="line">##### 算法</span><br><span class="line"></span><br><span class="line">- 排序</span><br><span class="line">- 堆栈（√）、队列、链表</span><br><span class="line">- 递归（60%算法递归）</span><br><span class="line">- 波兰式 和 逆波兰式 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##### 二面/三面</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##### 面试技巧</span><br><span class="line"></span><br><span class="line">- 知识面要广</span><br><span class="line">- 理解要深刻</span><br><span class="line"></span><br><span class="line">#####  渲染机制类</span><br><span class="line"></span><br><span class="line">- DOCTYPE 及作用 </span><br><span class="line">  - 声明文档类型</span><br><span class="line">  - HTML5</span><br><span class="line">    - `&lt;!DOCTYPE html&gt;`</span><br><span class="line">- 浏览器渲染过程</span><br><span class="line">  -  DOM Tree + Style Rules  =&gt; Render Tree</span><br><span class="line">- 重排Reflow</span><br><span class="line">  - 浏览器重新计算元素位置的过程称为 Reflow</span><br><span class="line">  - 触发方式：</span><br><span class="line">    - 增加、删除、修改DOM节点</span><br><span class="line">    - 移动 DOM 的位置</span><br><span class="line">    - 修改 CSS 样式</span><br><span class="line">    - 改变浏览器窗口大小，或者滚动的时候</span><br><span class="line">    - 修改网页默认字体时</span><br><span class="line">- 重绘Repaint</span><br><span class="line">  - 浏览器把已经确立的元素绘制在页面上的过程称为 Repaint</span><br><span class="line">  - 触发方式：</span><br><span class="line">    - DOM 改动</span><br><span class="line">    - CSS 改动</span><br><span class="line">- 布局Layout（浏览器的布局机制）</span><br><span class="line"></span><br><span class="line">##### JS运行机制</span><br><span class="line"></span><br><span class="line">- JS单线程</span><br><span class="line">- 任务队列</span><br><span class="line">  - 相对于主队列，只存放异步任务</span><br><span class="line">- Event Loop</span><br><span class="line">  - 先顺序执行同步队列（主队列），同步队列空了之后，从异步队列取出第一个任务放到同步任务，重复这个过程，直到两个队列空了</span><br><span class="line"></span><br><span class="line">- 异步任务</span><br><span class="line">  - setTimeout 和 setInterval</span><br><span class="line">  - DOM 事件</span><br><span class="line">  - ES6 中的 Promise</span><br><span class="line"></span><br><span class="line">##### 页面性能</span><br><span class="line"></span><br><span class="line">- 资源压缩合并，减少HTTP请求</span><br><span class="line"></span><br><span class="line">- 非核心代码异步加载</span><br><span class="line"></span><br><span class="line">  - 异步加载的方式</span><br><span class="line">    - 动态脚本加载（js生成）</span><br><span class="line">    - defer</span><br><span class="line">    - async</span><br><span class="line">  - 异步加载的区别</span><br><span class="line">    - defer 在HTML解析完之后才会执行，如果是多个，按加载顺序依次执行</span><br><span class="line">    - async 在加载完成后立即执行，如果是多个，执行顺序与加载顺序无关</span><br><span class="line"></span><br><span class="line">- 利用浏览器缓存（最重要）</span><br><span class="line"></span><br><span class="line">  - 缓存的分类</span><br><span class="line">    - 强缓存</span><br><span class="line">      - Expires 规定缓存失效时间（按服务器时间为准）</span><br><span class="line">      - Cache-Control 规定缓存多长时间后失效（客户端自己计算时间）</span><br><span class="line">    - 协商缓存（需要与服务器交流）</span><br><span class="line">      - Last-Modified</span><br><span class="line">      - If-Modified-Since</span><br><span class="line">      - Etag</span><br><span class="line">      - If-None-Match</span><br><span class="line">  - 缓存的原理</span><br><span class="line"></span><br><span class="line">- 使用 CDN （比较重要）</span><br><span class="line"></span><br><span class="line">- 预解析 DNS</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/"> 
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### 错误监控类</span><br><span class="line"></span><br><span class="line">- 前端错误的分类</span><br><span class="line"></span><br><span class="line">  - 即时运行错误：代码错误</span><br><span class="line">  - 资源加载错误</span><br><span class="line"></span><br><span class="line">- 错误的捕获方式</span><br><span class="line"></span><br><span class="line">  - 代码错误</span><br><span class="line"></span><br><span class="line">    - try...catch</span><br><span class="line">    - window.onerror</span><br><span class="line"></span><br><span class="line">  - 资源加载错误</span><br><span class="line"></span><br><span class="line">    - object.onerror，一些 object 自带 onerror 属性</span><br><span class="line"></span><br><span class="line">    - performance.getEntries()：能拿到所有加载成功的，用需要加载的去掉加载成功的得出加载失败的</span><br><span class="line"></span><br><span class="line">    - Error 事件捕获：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    window.addEventListener('error', function(e){
+        console.log('捕获'， e)
+    }, true)
+    ```
+</li>
+<li><p>上报错误的基本原理</p>
+<ul>
+<li>Ajax 通信</li>
+<li>利用 Image 对象上报</li>
+</ul>
+</li>
+</ul>
+<h4 id="三面-x2F-四面（考察项目）"><a href="#三面-x2F-四面（考察项目）" class="headerlink" title="三面&#x2F;四面（考察项目）"></a>三面&#x2F;四面（考察项目）</h4><h5 id="业务能力"><a href="#业务能力" class="headerlink" title="业务能力"></a>业务能力</h5><h5 id="团队协作能力"><a href="#团队协作能力" class="headerlink" title="团队协作能力"></a>团队协作能力</h5><h5 id="事务推动能力"><a href="#事务推动能力" class="headerlink" title="事务推动能力"></a>事务推动能力</h5><h5 id="带人能力"><a href="#带人能力" class="headerlink" title="带人能力"></a>带人能力</h5><h5 id="其他能力"><a href="#其他能力" class="headerlink" title="其他能力"></a>其他能力</h5>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://franky-jia.github.io/2022/05/30/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/%E5%9F%BA%E7%A1%80/" title="" target="_blank" rel="external">https://franky-jia.github.io/2022/05/30/web前端面试准备/基础/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/franky-jia" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/aaa.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/franky-jia" target="_blank"><span class="text-dark">取名很困难</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/05/30/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" title="(no title)"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <!-- <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div> -->
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>
