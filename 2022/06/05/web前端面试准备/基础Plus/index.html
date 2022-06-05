@@ -17,22 +17,19 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>10. Regular Expression Matching | Hexo</title>
-  <meta name="description" content="以后遇到这种题，一律只考虑正则表达式。手写比较困难，需要了解dp，也就是背包算法，自创的办法比较臃肿，已经舍弃了。自己写的正则匹配 123456789101112import reclass Solution:    def isMatch(self, s: str, p: str) -&gt; bool:                pattern &#x3D; re.compile(p)">
+  <title>Hexo</title>
+  <meta name="description" content="HTML CSS 总结 HTML语义化 增加代码可读性 利于SEO   块状元素 &amp; 内联元素 块状：block&#x2F;table，表现为独占一行 内联：inline&#x2F;inline-block，表现为在一行内   盒模型尺寸计算 offsetWidth &#x3D; width+padding+border box-sizing: border-box   margin 纵向">
 <meta property="og:type" content="article">
-<meta property="og:title" content="10. Regular Expression Matching">
-<meta property="og:url" content="https://franky-jia.github.io/2022/05/06/10.%20Regular%20Expression%20Matching/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://franky-jia.github.io/2022/06/05/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/%E5%9F%BA%E7%A1%80Plus/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="以后遇到这种题，一律只考虑正则表达式。手写比较困难，需要了解dp，也就是背包算法，自创的办法比较臃肿，已经舍弃了。自己写的正则匹配 123456789101112import reclass Solution:    def isMatch(self, s: str, p: str) -&gt; bool:                pattern &#x3D; re.compile(p)">
+<meta property="og:description" content="HTML CSS 总结 HTML语义化 增加代码可读性 利于SEO   块状元素 &amp; 内联元素 块状：block&#x2F;table，表现为独占一行 内联：inline&#x2F;inline-block，表现为在一行内   盒模型尺寸计算 offsetWidth &#x3D; width+padding+border box-sizing: border-box   margin 纵向">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-05-06T08:23:36.000Z">
-<meta property="article:modified_time" content="2022-05-07T02:23:59.682Z">
-<meta property="article:tag" content="LeetCode">
-<meta property="article:tag" content="LeetCode Top Questions">
-<meta property="article:tag" content="dp">
+<meta property="article:published_time" content="2022-06-05T00:35:05.103Z">
+<meta property="article:modified_time" content="2022-06-05T12:31:46.301Z">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://franky-jia.github.io/2022/05/06/10.%20Regular%20Expression%20Matching/index.html">
+  <link rel="canonical" href="https://franky-jia.github.io/2022/06/05/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/%E5%9F%BA%E7%A1%80Plus/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -342,52 +339,100 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-10. Regular Expression Matching" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-web前端面试准备/基础Plus" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
-      
-        
-  
-    <h1 class="article-title" itemprop="name">
-      10. Regular Expression Matching
-    </h1>
-  
-
       
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/05/06/10.%20Regular%20Expression%20Matching/" class="article-date">
-	  <time datetime="2022-05-06T08:23:36.000Z" itemprop="datePublished">2022-05-06</time>
+	<a href="/2022/06/05/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/%E5%9F%BA%E7%A1%80Plus/" class="article-date">
+	  <time datetime="2022-06-05T00:35:05.103Z" itemprop="datePublished">2022-06-05</time>
 	</a>
 </span>
         
         
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/LeetCode/" rel="tag">LeetCode</a>, <a class="article-tag-link-link" href="/tags/LeetCode-Top-Questions/" rel="tag">LeetCode Top Questions</a>, <a class="article-tag-link-link" href="/tags/dp/" rel="tag">dp</a>
-  </span>
-
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/06/10.%20Regular%20Expression%20Matching/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/06/05/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/%E5%9F%BA%E7%A1%80Plus/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>以后遇到这种题，一律只考虑正则表达式。手写比较困难，需要了解dp，也就是背包算法，自创的办法比较臃肿，已经舍弃了。自己写的正则匹配</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">class Solution:</span><br><span class="line">    def isMatch(self, s: str, p: str) -&gt; bool:</span><br><span class="line">        </span><br><span class="line">        pattern = re.compile(p)</span><br><span class="line">        res = pattern.search(s)</span><br><span class="line">        if res and res[0] == s:</span><br><span class="line">            return True</span><br><span class="line">        else:</span><br><span class="line">            return False</span><br><span class="line">test = Solution()</span><br><span class="line">test.isMatch(&quot;ab&quot;,&quot;.*c&quot;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="dp-学习"><a href="#dp-学习" class="headerlink" title="dp 学习"></a>dp 学习</h4><ul>
-<li><code>[[False]*(n+1) for _ in range(m+1)]</code> 创建二位数组，其中元素都是False</li>
+        <h2 id="HTML-CSS-总结"><a href="#HTML-CSS-总结" class="headerlink" title="HTML CSS 总结"></a>HTML CSS 总结</h2><ul>
+<li>HTML语义化<ul>
+<li>增加代码可读性</li>
+<li>利于SEO</li>
 </ul>
-<p>所谓的<code>dp</code>算法就是考虑所有的可能路线再随着程序进程舍弃变为不可能的路线，直到找到最后的合理路线。</p>
-<p>我觉得这个算法跟<code>dp</code>没什么关系，主要是很创新性的引入了二位数组来装载所有的可能性，知道所谓的<code>dp</code>算法没什么用，二位数组的创新思想更加重要</p>
-<p>然后是这个二位数组是怎么操作的，首先行和列分别代表字符串s和p，其中下标0为空的，从下标1开始。以[0,0]为起始，所以给[0,0]一个true，然后二位数组内部任意空间是判断s p中的某个下标对应的字符是否能匹配（同时需要这条路径的前面是通的）。然后如果[-1, -1]这个也为true，就说明这条路径从头到结束都是通的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def isMatch(self, s, p):</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        :type s: str</span><br><span class="line">        :type p: str</span><br><span class="line">        :rtype: bool</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        n = len(s)</span><br><span class="line">        m = len(p)</span><br><span class="line">        dp = [[False]*(n+1) for _ in range(m+1)]</span><br><span class="line">        dp[0][0] = True</span><br><span class="line">        for i in range(m):</span><br><span class="line">            for j in range(-1, n):</span><br><span class="line">                if j == -1:</span><br><span class="line">                    if p[i] == &quot;*&quot;:</span><br><span class="line">                        dp[i+1][j+1] = dp[i-1][j+1]</span><br><span class="line">                    continue</span><br><span class="line">                if p[i].isalpha():</span><br><span class="line">                    if p[i] == s[j]:</span><br><span class="line">                        dp[i+1][j+1] = dp[i][j]</span><br><span class="line">                elif p[i] == &quot;.&quot;:</span><br><span class="line">                    dp[i+1][j+1] = dp[i][j]</span><br><span class="line">                else:</span><br><span class="line">                    dp[i+1][j+1] = dp[i-1][j+1] or (dp[i+1][j] and (p[i-1] == s[j] or p[i-1] == &quot;.&quot;))</span><br><span class="line">        return dp[-1][-1]</span><br></pre></td></tr></table></figure>
-
+</li>
+<li>块状元素 &amp; 内联元素<ul>
+<li>块状：block&#x2F;table，表现为独占一行</li>
+<li>内联：inline&#x2F;inline-block，表现为在一行内</li>
+</ul>
+</li>
+<li>盒模型尺寸计算<ul>
+<li>offsetWidth &#x3D; width+padding+border</li>
+<li>box-sizing: border-box</li>
+</ul>
+</li>
+<li>margin 纵向重叠问题<ul>
+<li>纵向相邻的两个元素的margin-top与margin-bottom会相互重叠</li>
+</ul>
+</li>
+<li>margin负值（没什么特别的，就margin为负数，外部计算位置的时候要加上负值）</li>
+<li><strong>BFC</strong> （）<ul>
+<li>一块独立渲染区域，内部元素渲染不受外部因素影响</li>
+<li>BFC形成条件</li>
+<li>BFC常见应用，清除浮动</li>
+</ul>
+</li>
+<li>圣杯布局 双飞翼布局（卵用没有）</li>
+<li>absolute 和 relative（有用，但过时了，用手找px，脑子有问题）</li>
+<li>居中对齐方式：<ul>
+<li>inline 元素：水平方向 <code>text-align: center</code>  垂直方向 line-height 等于 height</li>
+<li>block 元素：<code>margin: auto</code></li>
+</ul>
+</li>
+<li>rem 布局方式（先不看）</li>
+<li>CSS动画（先不看）</li>
+</ul>
+<h3 id="JS基础"><a href="#JS基础" class="headerlink" title="JS基础"></a>JS基础</h3><h5 id="变量类型与计算"><a href="#变量类型与计算" class="headerlink" title="变量类型与计算"></a>变量类型与计算</h5><ul>
+<li><p>typeof能判断那些类型：</p>
+<ul>
+<li><p>除了引用类型和null都能判断，引用类型和null判断为object</p>
+</li>
+<li><p>猜测null本身其实是个对象，js中的null指向的是同一个东西</p>
+<ul>
+<li>&#96;&#96;&#96;<br>null &#x3D;&#x3D;&#x3D; null   &#x2F;&#x2F;true<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- === 与 ==</span><br><span class="line"></span><br><span class="line">  - === 是全等，要求数据类型也要等同</span><br><span class="line">  - == 不严格要求数据类型</span><br><span class="line"></span><br><span class="line">- 值类型 &amp; 引用类型</span><br><span class="line"></span><br><span class="line">  - 值类型赋值</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+let a &#x3D; 0<br>let b &#x3D; a<br>b &#x3D; 1<br>console.log(a)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 引用类型赋值</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+let a &#x3D; { name: ‘zero’}<br>let b &#x3D; a<br>b.name &#x3D; ‘something’<br>console.log(a.name)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 手写深拷贝</span><br><span class="line"></span><br><span class="line">  - 遍历 + 递归 即可 非常简单</span><br><span class="line">  - 注意，遍历使用 `for( key in obj)` 挺好用的，对于数组拿到的key是0，1，2这种</span><br><span class="line">  </span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<p>const deepClone &#x3D; (obj)&#x3D;&gt;{<br>    const newObj &#x3D; {}<br>    for (key in obj){<br>        if(key &#x3D;&#x3D;&#x3D; null || typeof key !&#x3D; ‘object’){<br>            lg(key)<br>            newObj[key] &#x3D; obj[key]<br>        }else{<br>            deepClone(key)<br>        }<br>    }<br>    return newObj<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### 原型链</span><br><span class="line"></span><br><span class="line">- 使用 class 实现继承，比掌握原型链简单多了，记住几个关键字和用法就完了</span><br><span class="line"></span><br><span class="line">  - class</span><br><span class="line">  - extends</span><br><span class="line">  - constructor  声明属性</span><br><span class="line">  - super  继承的时候选择哪些属性继承（事实上不带super也会把属性继承下来，但是在new实例的时候会无法对该属性赋值，该属性的值为undifined）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>const {log: lg} &#x3D; console<br>lg(‘练习class继承’)</p>
+<p>class People {<br>    constructor(name, gender, age){<br>        this.name &#x3D; name<br>        this.gender &#x3D; gender<br>        this.age &#x3D; age<br>    }<br>    say() {<br>        lg(<code>name is $&#123;this.name&#125;</code>)<br>    }<br>}</p>
+<p>class Student extends People {<br>    constructor(name, gender, grade){<br>        super(name, gender)<br>        this.grade &#x3D; grade<br>    }<br>    say() {<br>        lg(this.name, this.gender, this.grade)<br>    }<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">##### 作用域 与 闭包</span><br><span class="line"></span><br><span class="line">- 作用域与自由变量</span><br><span class="line">  - 全局作用域，函数作用域，块级作用域（for，if 包裹的区域）</span><br><span class="line">  - 自由变量，当前作用域没有定义但被使用的变量，会一层层往外层作用域查找</span><br><span class="line"></span><br><span class="line">- 闭包</span><br><span class="line"></span><br><span class="line">  - 自由变量的查找是在函数定义的地方，而不是执行的地方</span><br><span class="line">  - 对于带有返回函数的函数来说，返回函数的外层作用域就是函数</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>const fn &#x3D; function(){<br>    let j &#x3D; 100<br>    return function(){<br>        lg(‘j:’ + j)<br>    }<br>}<br>j&#x3D;101<br>fn()()  &#x2F;&#x2F;100</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- this</span><br><span class="line"></span><br><span class="line">  - this是在执行的时候确定的，不是在定义的时候确定的</span><br><span class="line"></span><br><span class="line">  - 使用场景</span><br><span class="line"></span><br><span class="line">    - 作为普通函数</span><br><span class="line">    - 使用 call apply bind</span><br><span class="line">    - 作为对象方法被调用</span><br><span class="line">    - 在 class 方法中被调用</span><br><span class="line">    - 箭头函数</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>  const {log: lg} &#x3D; console<br>  lg(‘this指向’)</p>
+<p>  const obj &#x3D; {<br>      name: ‘zero’,<br>      say: function(){<br>          setTimeout(()&#x3D;&gt;{<br>              lg(this)<br>          })<br>      },<br>      say2: ()&#x3D;&gt;{<br>          lg(this)<br>      }<br>  }<br>  obj.say()     &#x2F;&#x2F;this 指向obj<br>  obj.say2()		&#x2F;&#x2F;this 指向 windows（应该理解为箭头函数传递外层的this）<br>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- apply，bind，call 手写（感觉有点蠢，用apply写个bind）</span><br><span class="line"></span><br><span class="line">  -  `Array.prototype.slice.call(arguments)`  把类数组arguments转成数组</span><br><span class="line">  - 同时 self = this 这步存储 this 也是种常用做法，必须掌握</span><br><span class="line">  - 这个东西的基础是函数式编程，了解函数式编程对写这个代码很有帮助，其实就是返回一个能执行apply的函数</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>  const {log: lg} &#x3D; console<br>  lg(‘手写bind’)</p>
+<p>  function myBind(){<br>      arg &#x3D; Array.prototype.slice.call(arguments)<br>      const first &#x3D; arg.shift()<br>      const self &#x3D; this<br>      return function(){<br>          self.apply(first, arg)<br>      }<br>  }</p>
+<p>  Object.prototype.myBind &#x3D; myBind</p>
+<p>  const one &#x3D; {<br>      name: ‘zero’<br>  }</p>
+<p>  function say(){<br>      lg(this.name)<br>  }</p>
+<p>  say.myBind(one)()<br>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 闭包隐藏数据</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>  const {log: lg} &#x3D; console<br>  lg(‘闭包保存数据’)</p>
+<p>  const privateData &#x3D; function(){<br>      let name&#x3D; ‘zero’<br>      return {<br>          set: (val)&#x3D;&gt;{<br>              this.name &#x3D; val<br>              return this.name<br>          },<br>          get: ()&#x3D;&gt;{<br>              return this.name<br>          }<br>      }<br>  }</p>
+<p>  const obj &#x3D; privateData()<br>  lg(obj)<br>  lg(obj.get())<br>  obj.set(‘one’)<br>  lg(obj.get())<br>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### 异步与单线程</span><br><span class="line"></span><br><span class="line">- 异步场景</span><br><span class="line"></span><br><span class="line">  - 网络请求</span><br><span class="line">  - 定时</span><br><span class="line"></span><br><span class="line">- promise 基本使用</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>const {log: lg} &#x3D; console<br>lg(‘使用promise’)</p>
+<p>const url1 &#x3D; ‘<a target="_blank" rel="noopener" href="https://img0.baidu.com/it/u=3798217922,3880088897&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=889&amp;h=500&#39;">https://img0.baidu.com/it/u=3798217922,3880088897&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=889&amp;h=500&#39;</a><br>const url2 &#x3D; ‘<a target="_blank" rel="noopener" href="https://img0.baidu.com/it/u=512340543,3139277133&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=281&#39;">https://img0.baidu.com/it/u=512340543,3139277133&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=500&amp;h=281&#39;</a></p>
+<p>function createImg(url){<br>    return new Promise((resolve, reject)&#x3D;&gt;{<br>        const image &#x3D; document.createElement(‘img’)<br>        image.onload &#x3D; ()&#x3D;&gt;{<br>            resolve(image)<br>        }<br>        image.onerror &#x3D; ()&#x3D;&gt;{<br>            reject(‘error’)<br>        }<br>        image.src &#x3D; url<br>    })<br>}</p>
+<p>createImg(url1).then((image)&#x3D;&gt;{<br>    lg(image)<br>    document.body.append(image)<br>    return image<br>}).then((image)&#x3D;&gt;{<br>    return createImg(url2)<br>}).then((image)&#x3D;&gt;{<br>    document.body.append(image)<br>    lg(image)<br>}).catch((msg)&#x3D;&gt;{<br>    alert(msg)<br>})<br>&#96;&#96;&#96;</p>
+</li>
+</ul>
 
       
     </div>
@@ -397,7 +442,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://franky-jia.github.io/2022/05/06/10.%20Regular%20Expression%20Matching/" title="10. Regular Expression Matching" target="_blank" rel="external">https://franky-jia.github.io/2022/05/06/10. Regular Expression Matching/</a>
+      <a href="https://franky-jia.github.io/2022/06/05/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/%E5%9F%BA%E7%A1%80Plus/" title="" target="_blank" rel="external">https://franky-jia.github.io/2022/06/05/web前端面试准备/基础Plus/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -428,6 +473,10 @@
   </article>
   
     
+  <section id="comments">
+  	
+  </section>
+
 
   
 </div>
@@ -437,13 +486,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/05/07/11.%20Container%20With%20Most%20Water/" title="11. Container With Most Water"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/05/05/%E7%88%AC%E5%8F%96mp3/" title="一次使用爬虫解决个人mp3曲库问题实践"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/06/04/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/PC%E7%AB%AF%E5%95%86%E5%9F%8E%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E7%AC%94%E8%AE%B0/" title="(no title)"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -524,6 +569,8 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
 
 
 
