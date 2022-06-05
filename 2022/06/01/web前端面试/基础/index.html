@@ -26,7 +26,7 @@
 <meta property="og:description" content="一面技巧 准备要充分 知识要系统 沟通要简洁 内心要诚实 态度要谦虚 回答要灵活  页面布局 三栏布局（左右宽度固定，中间自适应。或者上下高度固定，中间自适应） 好像flex最好用，其次float，其次用position，（ 表格布局，网格布局Grid ) 语义化 页面布局理解深刻 css 基础要扎实 掌握前沿技术 代码书写规范    CSS 盒模型 标准模型：content padding bo">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-06-01T08:28:04.000Z">
-<meta property="article:modified_time" content="2022-06-05T13:02:00.114Z">
+<meta property="article:modified_time" content="2022-06-05T13:05:41.726Z">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
@@ -504,34 +504,290 @@
 <li><p>类与实例</p>
 <ul>
 <li><p>类的声明</p>
-<ul>
-<li>&#96;&#96;&#96;<br>function Animal(name){<br>this.name &#x3D; name<br>}<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  class Animal2 &#123;</span><br><span class="line">  	constructor ()&#123;</span><br><span class="line">  		this.name = name</span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function Animal(name)&#123;</span><br><span class="line">	this.name = name</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Animal2 &#123;</span><br><span class="line">	constructor ()&#123;</span><br><span class="line">		this.name = name</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>生成实例</p>
-<ul>
-<li>&#96;&#96;&#96;<br>new Animal(‘one’)<br>new Animal2(‘two’)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">- 类与继承</span><br><span class="line"></span><br><span class="line">  1. 借助构造函数实现继承，子级构造函数**直接引入**父级构造函数并使其this改变指向。缺点是在父级构造函数的原型链上添加方法属性无法被子级构造函数继承，很显然</span><br><span class="line"></span><br></pre></td></tr></table></figure>
- function Parent1(){<br>   this.name &#x3D; ‘zero’<br> }<br> function Child1(){<br>   Parent1.call(this)<br>   this.gener &#x3D; ‘female’<br> }<br> &#x2F;&#x2F; 无法继承原型链上的属性方法<br> Parent1.prototype.say&#x3D;function(){<br>   console.log(‘say’+this.name)<br> }<br> const one &#x3D; new Child1()<br> one.say()   &#x2F;&#x2F;one.say is not a function <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. 原型链继承，子类可以继承父类原型链上的方法，因为把父类的实例挂载到了子类的原型链（`__proto__`）上了。缺点是所有子类都会受到原型链变动的影响，当子类改变原型链上的对象或是数组里的内容时候，其他子类也会收到影响（需要注意在该属性不存于数组或者对象时候，子类会自己生成该属性或者方法）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
- function Parent2(){<br>   this.name &#x3D; ‘zero’<br>   this.looks &#x3D; {<br>   eyes: ‘black’<br>   }<br> }<br> function Child2(){<br>   this.gener &#x3D; ‘femail’<br> }<br> Child2.prototype &#x3D; new Parent2()<br> const one &#x3D; new Child2()<br> const two &#x3D; new Child2()<br> &#x2F;&#x2F;改变父类对象中的eyes，子类都会改变<br> one.looks.eyes &#x3D; ‘red’<br> &#x2F;&#x2F;此时会在子类生成name覆盖父类的name<br> one.name &#x3D; ‘one’<br> console.log(one.looks.eyes, two.looks.eyes)   &#x2F;&#x2F;red red<br> console.log(one.name)  &#x2F;&#x2F;‘one’ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. 组合继承方式（通常方式），结合上面的两种方法。在原型链继承的基础上，把带obj的父类通过构造函数的继承方式（直接继承）来继承</span><br><span class="line"></span><br></pre></td></tr></table></figure>
- function Parent3(){<br>   this.name &#x3D; ‘zero’<br>   this.looks &#x3D; {<br>   eyes: ‘black’<br>   }<br> }<br> function Child3(){<br>   Parent1.call(this)<br>   this.gener &#x3D; ‘female’<br> }<br> Child1.prototype &#x3D; new Parent1()</li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">new Animal(&#x27;one&#x27;)</span><br><span class="line">new Animal2(&#x27;two&#x27;)</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p> const one &#x3D; new Child1()<br> const two &#x3D; new Child1()</p>
-<p> one.looks.eyes &#x3D; ‘red’<br> console.log(one.looks.eyes, two.looks.eyes)</p>
-<p> Parent1.prototype.kind &#x3D; ‘human’<br> console.log(one.kind)<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">4. 组合继承的优化1。new实例的方式会使得 Child的实例 的 __proto__ 指向的是 Parent 的实例，造成的问题是，parent中的属性方法会在 Child这个层级存在，在Parent这个层级也存在，因此Parent这个层级的属性和方法是多余的，直接把Child挂载到Parent的原型链上即可</span><br><span class="line"></span><br></pre></td></tr></table></figure><br> function Parent4(){<br>     this.name &#x3D; ‘zero’<br>     this.looks &#x3D; {<br>         eyes: ‘black’<br>     }<br> }<br> function Child4(){<br>     Parent1.call(this)<br>     this.gener &#x3D; ‘female’<br> }<br> Child1.prototype &#x3D; Parent1.prototype<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">     </span><br><span class="line">5. 组合继承的优化2（完美方法）。在优化1的基础上实现了 子类 在 父类 原型链的下一级（父类此时由 `Object.create()`创建，是个空的实例）。我发现原型这个说法是不太好的，感觉叫做上一级实例会更好一些。最后再修改 `constructor` 就能足够完善了，也因为多了一个层级，所以可以自由修改 `constructor` </span><br><span class="line">  </span><br></pre></td></tr></table></figure><br> function Parent5(){<br>     this.name &#x3D; ‘zero’<br>     this.looks &#x3D; {<br>         eyes: ‘black’<br>     }<br> }<br> function Child5(){<br>     Parent1.call(this)<br>     this.gener &#x3D; ‘female’<br> }<br> Child5.prototype &#x3D; Object.create(Parent5.prototype)<br> Child5.prototype.constructor &#x3D; Child5<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">     </span><br><span class="line"></span><br><span class="line">##### 原型链</span><br><span class="line"></span><br><span class="line">- 创建对象有几种方法</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+</li>
+<li><p>类与继承</p>
+<ol>
+<li><p>借助构造函数实现继承，子级构造函数<strong>直接引入</strong>父级构造函数并使其this改变指向。缺点是在父级构造函数的原型链上添加方法属性无法被子级构造函数继承，很显然</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Parent1()&#123;</span><br><span class="line">	this.name = &#x27;zero&#x27;</span><br><span class="line">&#125;</span><br><span class="line">function Child1()&#123;</span><br><span class="line">	Parent1.call(this)</span><br><span class="line">	this.gener = &#x27;female&#x27;</span><br><span class="line">&#125;</span><br><span class="line">// 无法继承原型链上的属性方法</span><br><span class="line">Parent1.prototype.say=function()&#123;</span><br><span class="line">	console.log(&#x27;say&#x27;+this.name)</span><br><span class="line">&#125;</span><br><span class="line">const one = new Child1()</span><br><span class="line">one.say()   //one.say is not a function</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>原型链继承，子类可以继承父类原型链上的方法，因为把父类的实例挂载到了子类的原型链（<code>__proto__</code>）上了。缺点是所有子类都会受到原型链变动的影响，当子类改变原型链上的对象或是数组里的内容时候，其他子类也会收到影响（需要注意在该属性不存于数组或者对象时候，子类会自己生成该属性或者方法）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function Parent2()&#123;</span><br><span class="line">    this.name = &#x27;zero&#x27;</span><br><span class="line">    this.looks = &#123;</span><br><span class="line">        eyes: &#x27;black&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">function Child2()&#123;</span><br><span class="line">    this.gener = &#x27;femail&#x27;</span><br><span class="line">&#125;</span><br><span class="line">Child2.prototype = new Parent2()</span><br><span class="line">const one = new Child2()</span><br><span class="line">const two = new Child2()</span><br><span class="line">//改变父类对象中的eyes，子类都会改变</span><br><span class="line">one.looks.eyes = &#x27;red&#x27;</span><br><span class="line">//此时会在子类生成name覆盖父类的name</span><br><span class="line">one.name = &#x27;one&#x27;</span><br><span class="line">console.log(one.looks.eyes, two.looks.eyes)   //red red</span><br><span class="line">console.log(one.name)  //&#x27;one&#x27;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组合继承方式（通常方式），结合上面的两种方法。在原型链继承的基础上，把带obj的父类通过构造函数的继承方式（直接继承）来继承</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function Parent3()&#123;</span><br><span class="line">    this.name = &#x27;zero&#x27;</span><br><span class="line">    this.looks = &#123;</span><br><span class="line">        eyes: &#x27;black&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">function Child3()&#123;</span><br><span class="line">    Parent1.call(this)</span><br><span class="line">    this.gener = &#x27;female&#x27;</span><br><span class="line">&#125;</span><br><span class="line">Child1.prototype = new Parent1()</span><br><span class="line"></span><br><span class="line">const one = new Child1()</span><br><span class="line">const two = new Child1()</span><br><span class="line"></span><br><span class="line">one.looks.eyes = &#x27;red&#x27;</span><br><span class="line">console.log(one.looks.eyes, two.looks.eyes)</span><br><span class="line"></span><br><span class="line">Parent1.prototype.kind = &#x27;human&#x27;</span><br><span class="line">console.log(one.kind)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组合继承的优化1。new实例的方式会使得 Child的实例 的 <strong>proto</strong> 指向的是 Parent 的实例，造成的问题是，parent中的属性方法会在 Child这个层级存在，在Parent这个层级也存在，因此Parent这个层级的属性和方法是多余的，直接把Child挂载到Parent的原型链上即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Parent4()&#123;</span><br><span class="line">    this.name = &#x27;zero&#x27;</span><br><span class="line">    this.looks = &#123;</span><br><span class="line">        eyes: &#x27;black&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">function Child4()&#123;</span><br><span class="line">    Parent1.call(this)</span><br><span class="line">    this.gener = &#x27;female&#x27;</span><br><span class="line">&#125;</span><br><span class="line">Child1.prototype = Parent1.prototype</span><br></pre></td></tr></table></figure></li>
+</ol>
 </li>
 </ul>
-<p>const o1 &#x3D; {name: ‘o1’}</p>
-<p>const o11 &#x3D; new Object({name: ‘o11’})</p>
-<p>const o2 &#x3D; function(){this.name&#x3D; ‘o2’}<br>const o22 &#x3D; new o2()</p>
-<p>const o3 &#x3D; {name: ‘o3’}<br>const o33 &#x3D; Object.create(o3)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 原型、构造函数、实例、原型链</span><br><span class="line"></span><br><span class="line">  - 原型对象</span><br><span class="line">    - 原型的 constructor 指向构造函数，构造函数的 prototype 指向 原型</span><br><span class="line">  - 构造函数</span><br><span class="line">    - 能用来 new 的就是构造函数，（也可以是不通过new的语法糖形式）</span><br><span class="line">  - 实例</span><br><span class="line">    - new 出来的就是实例。实例的 `__proto__` 指向的原型</span><br><span class="line">  - 原型链</span><br><span class="line">    - 通过 `__proto__` 来实现向上查找</span><br><span class="line">    - 构造函数的prototype指向原型对象，所以new出来的实例的 `__proto__` 指向原型对象</span><br><span class="line"></span><br><span class="line">- instanceof 的原理</span><br><span class="line"></span><br><span class="line">  - 构造函数的 `prototype` 与 实例的 `__proto__` 指向同一个</span><br><span class="line"></span><br><span class="line">- new运算符，</span><br><span class="line"></span><br><span class="line">  - 记录一下 call apply bind 的区别</span><br><span class="line"></span><br><span class="line">    - 功能都是把函数绑定到某个object上，同时函数中的this指向当前的object。call 一个参数是object，后面参数是函数所需参数，会立即执行。apply 第一个参数是object，后面参数是函数所需参数用[ ]包裹，会立即执行。bind 第一个参数是object，后面参数是函数所需参数，不会立即执行，而是返回一个this指向object的函数。好像没啥玩意，只要会一个 bind 就足够了，会call 可能会省代码</span><br><span class="line"></span><br><span class="line">  - 手写 new：</span><br><span class="line">    </span><br><span class="line">    -  `Object.create(fn.prototype)` 创建一个指向 fn.prototype（fn的原型） 的 空的实例</span><br><span class="line">    - fn.apply(o, rest) 是把 fn 绑定到原型链上，o已经在原型链上了，让fn里的this指向o就让通过fn生成的实例挂载到了fn原型的下面，也就是新的实例的 `__proto__`指向 fn的原型</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
-<p>  const new2 &#x3D; function(fn, …rest){<br>      const o &#x3D; Object.create(fn.prototype)<br>      const p &#x3D; fn.apply(o, rest)<br>      if(typeof p &#x3D;&#x3D;&#x3D;’Object’){<br>          return p<br>      }else{<br>              return o<br>      }<br>  }<br>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line"></span><br><span class="line">##### 通信（跨域通信、前后端通信）</span><br><span class="line"></span><br><span class="line">- 什么是同源策略及限制</span><br><span class="line"></span><br><span class="line">  - 同源策略：同一协议，同一域名，同一端口号</span><br><span class="line">  - 限制从一个源加载的文档或脚本与另一个源的资源进行交互，是一种隔离潜在恶意文件的安全机制</span><br><span class="line">  - 例子：</span><br><span class="line">    - Cookie、LocalStorage、IndexDB</span><br><span class="line">    - DOM 无法获得</span><br><span class="line">    - AJAX 请求不能发送</span><br><span class="line"></span><br><span class="line">- 前后端如何通信</span><br><span class="line"></span><br><span class="line">  - Ajax（同源）</span><br><span class="line">  - WebSockect （跨域）</span><br><span class="line">  - CORS （都支持）</span><br><span class="line"></span><br><span class="line">- 如何创建 Ajax （手写?）</span><br><span class="line"></span><br><span class="line">  - XMLHttpRequest 的工作流程</span><br><span class="line">  - 兼容性处理</span><br><span class="line">  - 事件的触发条件</span><br><span class="line">  - 事件的触发顺序</span><br><span class="line"></span><br><span class="line">- 跨域通信的几种方式（没用过）</span><br><span class="line"></span><br><span class="line">  - JSONP</span><br><span class="line"></span><br><span class="line">    - 首先假设前端与后端处于不同的源</span><br><span class="line"></span><br><span class="line">    - 前端首先在 &lt;script&gt; 中写好一个回调函数，约定拿到跨域资源在前端的使用方式，利用 &lt;script&gt;  标签的跨域特性，发送一个get请求给后端（访问url就是get请求），后端等待获取 get 请求</span><br><span class="line"></span><br><span class="line">    - 后端通过拿到get请求后，返回一段 js 的 Json 形式的自执行函数，前端的 &lt;script&gt; 标签拿到对应的跨域资源进行解析，跨域的资源中包含传递的数据，此时在其中的自执行函数直接调用传参就能把资源直接供前端调用（没有自执行函数只传参卵用没有，前端拿到资源必须调用函数才能利用起来）</span><br><span class="line"></span><br><span class="line">    - 前端部分代码</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>    <script><br>        function onResponse(sourse){<br>            console.log(sourse)<br>        }<br>    </script><br>    <script src="localhost:9000/api"></script><br>    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 后端部分代码</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>    const http &#x3D; require(‘http’);<br>    http.createServer((req, res) &#x3D;&gt; {<br>        if (req.url &#x3D;&#x3D;&#x3D; ‘&#x2F;api’) {<br>            let posts &#x3D; [‘js’, ‘php’];<br>            res.end(<code>onResponse($&#123;JSON.stringify(posts)&#125;)</code>);<br>        }<br>    })<br>    .listen(9000, () &#x3D;&gt; {<br>        console.log(9000)<br>    })<br>    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">  - Hash   略过，通过 url 传递</span><br><span class="line"></span><br><span class="line">  - postMessage    略过</span><br><span class="line"></span><br><span class="line">  - WebScoket   较新的标准，简单好用</span><br><span class="line"></span><br><span class="line">  - CORS   也是比较新的跨站方式  好像就是后端配置一下，前端用特定的方式访问就行了，然后浏览器的默认策略就会支持跨站访问了</span><br><span class="line"></span><br><span class="line">##### 安全（CSRF、XSS）没啥印象了</span><br><span class="line"></span><br><span class="line">- CSRF</span><br><span class="line">  - 跨站请求伪造</span><br><span class="line">    - 原理：用户获得了网站A的cookie认证，然后在访问网站B的时候触发了跳转网站A的行为，并执行了用户的操作，此时该用户触发了一些不属于自己的行为（好像cookie没有泄露？）</span><br><span class="line">    - 防御：Token验证（再加验证信息），Referer验证（校验跳转页面的来源），隐藏令牌（跟Token差不多，更隐蔽一些）</span><br><span class="line">- XSS</span><br><span class="line">  - 跨站脚本攻击</span><br><span class="line">    - 原理：就是注入JS</span><br><span class="line">    - 防御：让脚本无法执行</span><br><span class="line"></span><br><span class="line">##### 算法</span><br><span class="line"></span><br><span class="line">- 排序</span><br><span class="line">- 堆栈（√）、队列、链表</span><br><span class="line">- 递归（60%算法递归）</span><br><span class="line">- 波兰式 和 逆波兰式 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##### 二面/三面</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##### 面试技巧</span><br><span class="line"></span><br><span class="line">- 知识面要广</span><br><span class="line">- 理解要深刻</span><br><span class="line"></span><br><span class="line">#####  渲染机制类</span><br><span class="line"></span><br><span class="line">- DOCTYPE 及作用 </span><br><span class="line">  - 声明文档类型</span><br><span class="line">  - HTML5</span><br><span class="line">    - `&lt;!DOCTYPE html&gt;`</span><br><span class="line">- 浏览器渲染过程</span><br><span class="line">  -  DOM Tree + Style Rules  =&gt; Render Tree</span><br><span class="line">- 重排Reflow</span><br><span class="line">  - 浏览器重新计算元素位置的过程称为 Reflow</span><br><span class="line">  - 触发方式：</span><br><span class="line">    - 增加、删除、修改DOM节点</span><br><span class="line">    - 移动 DOM 的位置</span><br><span class="line">    - 修改 CSS 样式</span><br><span class="line">    - 改变浏览器窗口大小，或者滚动的时候</span><br><span class="line">    - 修改网页默认字体时</span><br><span class="line">- 重绘Repaint</span><br><span class="line">  - 浏览器把已经确立的元素绘制在页面上的过程称为 Repaint</span><br><span class="line">  - 触发方式：</span><br><span class="line">    - DOM 改动</span><br><span class="line">    - CSS 改动</span><br><span class="line">- 布局Layout（浏览器的布局机制）</span><br><span class="line"></span><br><span class="line">##### JS运行机制</span><br><span class="line"></span><br><span class="line">- JS单线程</span><br><span class="line">- 任务队列</span><br><span class="line">  - 相对于主队列，只存放异步任务</span><br><span class="line">- Event Loop</span><br><span class="line">  - 先顺序执行同步队列（主队列），同步队列空了之后，从异步队列取出第一个任务放到同步任务，重复这个过程，直到两个队列空了</span><br><span class="line"></span><br><span class="line">- 异步任务</span><br><span class="line">  - setTimeout 和 setInterval</span><br><span class="line">  - DOM 事件</span><br><span class="line">  - ES6 中的 Promise</span><br><span class="line"></span><br><span class="line">##### 页面性能</span><br><span class="line"></span><br><span class="line">- 资源压缩合并，减少HTTP请求</span><br><span class="line"></span><br><span class="line">- 非核心代码异步加载</span><br><span class="line"></span><br><span class="line">  - 异步加载的方式</span><br><span class="line">    - 动态脚本加载（js生成）</span><br><span class="line">    - defer</span><br><span class="line">    - async</span><br><span class="line">  - 异步加载的区别</span><br><span class="line">    - defer 在HTML解析完之后才会执行，如果是多个，按加载顺序依次执行</span><br><span class="line">    - async 在加载完成后立即执行，如果是多个，执行顺序与加载顺序无关</span><br><span class="line"></span><br><span class="line">- 利用浏览器缓存（最重要）</span><br><span class="line"></span><br><span class="line">  - 缓存的分类</span><br><span class="line">    - 强缓存</span><br><span class="line">      - Expires 规定缓存失效时间（按服务器时间为准）</span><br><span class="line">      - Cache-Control 规定缓存多长时间后失效（客户端自己计算时间）</span><br><span class="line">    - 协商缓存（需要与服务器交流）</span><br><span class="line">      - Last-Modified</span><br><span class="line">      - If-Modified-Since</span><br><span class="line">      - Etag</span><br><span class="line">      - If-None-Match</span><br><span class="line">  - 缓存的原理</span><br><span class="line"></span><br><span class="line">- 使用 CDN （比较重要）</span><br><span class="line"></span><br><span class="line">- 预解析 DNS</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<link rel="dns-prefetch" href="https://fonts.googleapis.com/"> 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### 错误监控类</span><br><span class="line"></span><br><span class="line">- 前端错误的分类</span><br><span class="line"></span><br><span class="line">  - 即时运行错误：代码错误</span><br><span class="line">  - 资源加载错误</span><br><span class="line"></span><br><span class="line">- 错误的捕获方式</span><br><span class="line"></span><br><span class="line">  - 代码错误</span><br><span class="line"></span><br><span class="line">    - try...catch</span><br><span class="line">    - window.onerror</span><br><span class="line"></span><br><span class="line">  - 资源加载错误</span><br><span class="line"></span><br><span class="line">    - object.onerror，一些 object 自带 onerror 属性</span><br><span class="line"></span><br><span class="line">    - performance.getEntries()：能拿到所有加载成功的，用需要加载的去掉加载成功的得出加载失败的</span><br><span class="line"></span><br><span class="line">    - Error 事件捕获：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-    window.addEventListener('error', function(e){
-        console.log('捕获'， e)
-    }, true)
-    ```
+<ol start="5">
+<li><p>组合继承的优化2（完美方法）。在优化1的基础上实现了 子类 在 父类 原型链的下一级（父类此时由 <code>Object.create()</code>创建，是个空的实例）。我发现原型这个说法是不太好的，感觉叫做上一级实例会更好一些。最后再修改 <code>constructor</code> 就能足够完善了，也因为多了一个层级，所以可以自由修改 <code>constructor</code> </p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function Parent5()&#123;</span><br><span class="line">    this.name = &#x27;zero&#x27;</span><br><span class="line">    this.looks = &#123;</span><br><span class="line">        eyes: &#x27;black&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">function Child5()&#123;</span><br><span class="line">    Parent1.call(this)</span><br><span class="line">    this.gener = &#x27;female&#x27;</span><br><span class="line">&#125;</span><br><span class="line">Child5.prototype = Object.create(Parent5.prototype)</span><br><span class="line">Child5.prototype.constructor = Child5</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h5><ul>
+<li><p>创建对象有几种方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const o1 = &#123;name: &#x27;o1&#x27;&#125;</span><br><span class="line"></span><br><span class="line">const o11 = new Object(&#123;name: &#x27;o11&#x27;&#125;)</span><br><span class="line"></span><br><span class="line">const o2 = function()&#123;this.name= &#x27;o2&#x27;&#125;</span><br><span class="line">const o22 = new o2()</span><br><span class="line"></span><br><span class="line">const o3 = &#123;name: &#x27;o3&#x27;&#125;</span><br><span class="line">const o33 = Object.create(o3)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>原型、构造函数、实例、原型链</p>
+<ul>
+<li>原型对象<ul>
+<li>原型的 constructor 指向构造函数，构造函数的 prototype 指向 原型</li>
+</ul>
+</li>
+<li>构造函数<ul>
+<li>能用来 new 的就是构造函数，（也可以是不通过new的语法糖形式）</li>
+</ul>
+</li>
+<li>实例<ul>
+<li>new 出来的就是实例。实例的 <code>__proto__</code> 指向的原型</li>
+</ul>
+</li>
+<li>原型链<ul>
+<li>通过 <code>__proto__</code> 来实现向上查找</li>
+<li>构造函数的prototype指向原型对象，所以new出来的实例的 <code>__proto__</code> 指向原型对象</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>instanceof 的原理</p>
+<ul>
+<li>构造函数的 <code>prototype</code> 与 实例的 <code>__proto__</code> 指向同一个</li>
+</ul>
+</li>
+<li><p>new运算符，</p>
+<ul>
+<li><p>记录一下 call apply bind 的区别</p>
+<ul>
+<li>功能都是把函数绑定到某个object上，同时函数中的this指向当前的object。call 一个参数是object，后面参数是函数所需参数，会立即执行。apply 第一个参数是object，后面参数是函数所需参数用[ ]包裹，会立即执行。bind 第一个参数是object，后面参数是函数所需参数，不会立即执行，而是返回一个this指向object的函数。好像没啥玩意，只要会一个 bind 就足够了，会call 可能会省代码</li>
+</ul>
+</li>
+<li><p>手写 new：</p>
+<ul>
+<li><code>Object.create(fn.prototype)</code> 创建一个指向 fn.prototype（fn的原型） 的 空的实例</li>
+<li>fn.apply(o, rest) 是把 fn 绑定到原型链上，o已经在原型链上了，让fn里的this指向o就让通过fn生成的实例挂载到了fn原型的下面，也就是新的实例的 <code>__proto__</code>指向 fn的原型</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const new2 = function(fn, ...rest)&#123;</span><br><span class="line">	const o = Object.create(fn.prototype)</span><br><span class="line">	const p = fn.apply(o, rest)</span><br><span class="line">	if(typeof p ===&#x27;Object&#x27;)&#123;</span><br><span class="line">		return p</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">return o</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h5 id="通信（跨域通信、前后端通信）"><a href="#通信（跨域通信、前后端通信）" class="headerlink" title="通信（跨域通信、前后端通信）"></a>通信（跨域通信、前后端通信）</h5><ul>
+<li><p>什么是同源策略及限制</p>
+<ul>
+<li>同源策略：同一协议，同一域名，同一端口号</li>
+<li>限制从一个源加载的文档或脚本与另一个源的资源进行交互，是一种隔离潜在恶意文件的安全机制</li>
+<li>例子：<ul>
+<li>Cookie、LocalStorage、IndexDB</li>
+<li>DOM 无法获得</li>
+<li>AJAX 请求不能发送</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>前后端如何通信</p>
+<ul>
+<li>Ajax（同源）</li>
+<li>WebSockect （跨域）</li>
+<li>CORS （都支持）</li>
+</ul>
+</li>
+<li><p>如何创建 Ajax （手写?）</p>
+<ul>
+<li>XMLHttpRequest 的工作流程</li>
+<li>兼容性处理</li>
+<li>事件的触发条件</li>
+<li>事件的触发顺序</li>
+</ul>
+</li>
+<li><p>跨域通信的几种方式（没用过）</p>
+<ul>
+<li><p>JSONP</p>
+<ul>
+<li><p>首先假设前端与后端处于不同的源</p>
+</li>
+<li><p>前端首先在 <script> 中写好一个回调函数，约定拿到跨域资源在前端的使用方式，利用 <script>  标签的跨域特性，发送一个get请求给后端（访问url就是get请求），后端等待获取 get 请求</p>
+</li>
+<li><p>后端通过拿到get请求后，返回一段 js 的 Json 形式的自执行函数，前端的 <script> 标签拿到对应的跨域资源进行解析，跨域的资源中包含传递的数据，此时在其中的自执行函数直接调用传参就能把资源直接供前端调用（没有自执行函数只传参卵用没有，前端拿到资源必须调用函数才能利用起来）</p>
+</li>
+<li><p>前端部分代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    function onResponse(sourse)&#123;</span><br><span class="line">        console.log(sourse)</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;localhost:9000/api&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>后端部分代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const http = require(&#x27;http&#x27;);</span><br><span class="line">http.createServer((req, res) =&gt; &#123;</span><br><span class="line">    if (req.url === &#x27;/api&#x27;) &#123;</span><br><span class="line">        let posts = [&#x27;js&#x27;, &#x27;php&#x27;];</span><br><span class="line">        res.end(`onResponse($&#123;JSON.stringify(posts)&#125;)`);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">.listen(9000, () =&gt; &#123;</span><br><span class="line">    console.log(9000)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Hash   略过，通过 url 传递</p>
+</li>
+<li><p>postMessage    略过</p>
+</li>
+<li><p>WebScoket   较新的标准，简单好用</p>
+</li>
+<li><p>CORS   也是比较新的跨站方式  好像就是后端配置一下，前端用特定的方式访问就行了，然后浏览器的默认策略就会支持跨站访问了</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="安全（CSRF、XSS）没啥印象了"><a href="#安全（CSRF、XSS）没啥印象了" class="headerlink" title="安全（CSRF、XSS）没啥印象了"></a>安全（CSRF、XSS）没啥印象了</h5><ul>
+<li>CSRF<ul>
+<li>跨站请求伪造<ul>
+<li>原理：用户获得了网站A的cookie认证，然后在访问网站B的时候触发了跳转网站A的行为，并执行了用户的操作，此时该用户触发了一些不属于自己的行为（好像cookie没有泄露？）</li>
+<li>防御：Token验证（再加验证信息），Referer验证（校验跳转页面的来源），隐藏令牌（跟Token差不多，更隐蔽一些）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>XSS<ul>
+<li>跨站脚本攻击<ul>
+<li>原理：就是注入JS</li>
+<li>防御：让脚本无法执行</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h5><ul>
+<li>排序</li>
+<li>堆栈（√）、队列、链表</li>
+<li>递归（60%算法递归）</li>
+<li>波兰式 和 逆波兰式</li>
+</ul>
+<h5 id="二面-三面"><a href="#二面-三面" class="headerlink" title="二面/三面"></a>二面/三面</h5><h5 id="面试技巧"><a href="#面试技巧" class="headerlink" title="面试技巧"></a>面试技巧</h5><ul>
+<li>知识面要广</li>
+<li>理解要深刻</li>
+</ul>
+<h5 id="渲染机制类"><a href="#渲染机制类" class="headerlink" title="渲染机制类"></a>渲染机制类</h5><ul>
+<li>DOCTYPE 及作用 <ul>
+<li>声明文档类型</li>
+<li>HTML5<ul>
+<li><code>&lt;!DOCTYPE html&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>浏览器渲染过程<ul>
+<li>DOM Tree + Style Rules  => Render Tree</li>
+</ul>
+</li>
+<li>重排Reflow<ul>
+<li>浏览器重新计算元素位置的过程称为 Reflow</li>
+<li>触发方式：<ul>
+<li>增加、删除、修改DOM节点</li>
+<li>移动 DOM 的位置</li>
+<li>修改 CSS 样式</li>
+<li>改变浏览器窗口大小，或者滚动的时候</li>
+<li>修改网页默认字体时</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>重绘Repaint<ul>
+<li>浏览器把已经确立的元素绘制在页面上的过程称为 Repaint</li>
+<li>触发方式：<ul>
+<li>DOM 改动</li>
+<li>CSS 改动</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>布局Layout（浏览器的布局机制）</li>
+</ul>
+<h5 id="JS运行机制"><a href="#JS运行机制" class="headerlink" title="JS运行机制"></a>JS运行机制</h5><ul>
+<li><p>JS单线程</p>
+</li>
+<li><p>任务队列</p>
+<ul>
+<li>相对于主队列，只存放异步任务</li>
+</ul>
+</li>
+<li><p>Event Loop</p>
+<ul>
+<li>先顺序执行同步队列（主队列），同步队列空了之后，从异步队列取出第一个任务放到同步任务，重复这个过程，直到两个队列空了</li>
+</ul>
+</li>
+<li><p>异步任务</p>
+<ul>
+<li>setTimeout 和 setInterval</li>
+<li>DOM 事件</li>
+<li>ES6 中的 Promise</li>
+</ul>
+</li>
+</ul>
+<h5 id="页面性能"><a href="#页面性能" class="headerlink" title="页面性能"></a>页面性能</h5><ul>
+<li><p>资源压缩合并，减少HTTP请求</p>
+</li>
+<li><p>非核心代码异步加载</p>
+<ul>
+<li>异步加载的方式<ul>
+<li>动态脚本加载（js生成）</li>
+<li>defer</li>
+<li>async</li>
+</ul>
+</li>
+<li>异步加载的区别<ul>
+<li>defer 在HTML解析完之后才会执行，如果是多个，按加载顺序依次执行</li>
+<li>async 在加载完成后立即执行，如果是多个，执行顺序与加载顺序无关</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>利用浏览器缓存（最重要）</p>
+<ul>
+<li>缓存的分类<ul>
+<li>强缓存<ul>
+<li>Expires 规定缓存失效时间（按服务器时间为准）</li>
+<li>Cache-Control 规定缓存多长时间后失效（客户端自己计算时间）</li>
+</ul>
+</li>
+<li>协商缓存（需要与服务器交流）<ul>
+<li>Last-Modified</li>
+<li>If-Modified-Since</li>
+<li>Etag</li>
+<li>If-None-Match</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>缓存的原理</li>
+</ul>
+</li>
+<li><p>使用 CDN （比较重要）</p>
+</li>
+<li><p>预解析 DNS</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;dns-prefetch&quot; href=&quot;https://fonts.googleapis.com/&quot;&gt; </span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="错误监控类"><a href="#错误监控类" class="headerlink" title="错误监控类"></a>错误监控类</h5><ul>
+<li><p>前端错误的分类</p>
+<ul>
+<li>即时运行错误：代码错误</li>
+<li>资源加载错误</li>
+</ul>
+</li>
+<li><p>错误的捕获方式</p>
+<ul>
+<li><p>代码错误</p>
+<ul>
+<li>try...catch</li>
+<li>window.onerror</li>
+</ul>
+</li>
+<li><p>资源加载错误</p>
+<ul>
+<li><p>object.onerror，一些 object 自带 onerror 属性</p>
+</li>
+<li><p>performance.getEntries()：能拿到所有加载成功的，用需要加载的去掉加载成功的得出加载失败的</p>
+</li>
+<li><p>Error 事件捕获：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&#x27;error&#x27;, function(e)&#123;</span><br><span class="line">	console.log(&#x27;捕获&#x27;， e)</span><br><span class="line">&#125;, true)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
 </li>
 <li><p>上报错误的基本原理</p>
 <ul>
@@ -540,7 +796,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="三面-x2F-四面（考察项目）"><a href="#三面-x2F-四面（考察项目）" class="headerlink" title="三面&#x2F;四面（考察项目）"></a>三面&#x2F;四面（考察项目）</h4><h5 id="业务能力"><a href="#业务能力" class="headerlink" title="业务能力"></a>业务能力</h5><h5 id="团队协作能力"><a href="#团队协作能力" class="headerlink" title="团队协作能力"></a>团队协作能力</h5><h5 id="事务推动能力"><a href="#事务推动能力" class="headerlink" title="事务推动能力"></a>事务推动能力</h5><h5 id="带人能力"><a href="#带人能力" class="headerlink" title="带人能力"></a>带人能力</h5><h5 id="其他能力"><a href="#其他能力" class="headerlink" title="其他能力"></a>其他能力</h5>
+<h4 id="三面-四面（考察项目）"><a href="#三面-四面（考察项目）" class="headerlink" title="三面/四面（考察项目）"></a>三面/四面（考察项目）</h4><h5 id="业务能力"><a href="#业务能力" class="headerlink" title="业务能力"></a>业务能力</h5><h5 id="团队协作能力"><a href="#团队协作能力" class="headerlink" title="团队协作能力"></a>团队协作能力</h5><h5 id="事务推动能力"><a href="#事务推动能力" class="headerlink" title="事务推动能力"></a>事务推动能力</h5><h5 id="带人能力"><a href="#带人能力" class="headerlink" title="带人能力"></a>带人能力</h5><h5 id="其他能力"><a href="#其他能力" class="headerlink" title="其他能力"></a>其他能力</h5>
       
     </div>
     <div class="article-footer">
