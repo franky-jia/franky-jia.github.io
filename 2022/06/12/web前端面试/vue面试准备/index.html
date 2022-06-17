@@ -18,16 +18,20 @@
   
   
   <title>vue面试准备 | Hexo</title>
-  <meta property="og:type" content="article">
+  <meta name="description" content="趋势 Vue 与 React 越来越接近 Vue3 Options API 对应 React class Component Vue3 Composition API 对应 React Hooks    Vue 使用概述 基本使用，组件使用——常用，必会 高级特性——不常用，体现深度 Vuex 和 Vue-router使用  Vue 基本使用 指令、插值  插值、表达式 1&amp;#123;&amp;#123;">
+<meta property="og:type" content="article">
 <meta property="og:title" content="vue面试准备">
 <meta property="og:url" content="https://franky-jia.github.io/2022/06/12/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/vue%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="趋势 Vue 与 React 越来越接近 Vue3 Options API 对应 React class Component Vue3 Composition API 对应 React Hooks    Vue 使用概述 基本使用，组件使用——常用，必会 高级特性——不常用，体现深度 Vuex 和 Vue-router使用  Vue 基本使用 指令、插值  插值、表达式 1&amp;#123;&amp;#123;">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://vuex.vuejs.org/vuex.png">
 <meta property="article:published_time" content="2022-06-12T02:29:17.000Z">
-<meta property="article:modified_time" content="2022-06-12T02:30:04.243Z">
+<meta property="article:modified_time" content="2022-06-17T08:00:03.967Z">
 <meta property="article:tag" content="前端面试">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://vuex.vuejs.org/vuex.png">
   <!-- Canonical links -->
   <link rel="canonical" href="https://franky-jia.github.io/2022/06/12/web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/vue%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/index.html">
   
@@ -381,7 +385,183 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        
+        <h3 id="趋势"><a href="#趋势" class="headerlink" title="趋势"></a>趋势</h3><ul>
+<li>Vue 与 React 越来越接近<ul>
+<li>Vue3 Options API 对应 React class Component</li>
+<li>Vue3 Composition API 对应 React Hooks</li>
+</ul>
+</li>
+</ul>
+<h3 id="Vue-使用"><a href="#Vue-使用" class="headerlink" title="Vue 使用"></a>Vue 使用</h3><h5 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h5><ul>
+<li>基本使用，组件使用——常用，必会</li>
+<li>高级特性——不常用，体现深度</li>
+<li>Vuex 和 Vue-router使用</li>
+</ul>
+<h5 id="Vue-基本使用"><a href="#Vue-基本使用" class="headerlink" title="Vue 基本使用"></a>Vue 基本使用</h5><ul>
+<li><p>指令、插值</p>
+<ul>
+<li><p>插值、表达式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; message &#125;&#125;  &#123;&#123;flag ? true : false&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指令、动态属性：<code>:id</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p :id=&quot;dynamicId&quot;&gt; 动态属性&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>v-html：会有XSS风险，会覆盖子组件（好像新版本的vue加了校验，没这个问题了）</p>
+</li>
+</ul>
+</li>
+<li><p>computed 和 watch</p>
+<ul>
+<li>computed 有缓存，data 不变则不会重新计算</li>
+<li>watch 如何深度监听？</li>
+<li>watch 监听引用类型，拿不到 oldVal</li>
+</ul>
+</li>
+<li><p>class 与 style</p>
+</li>
+<li><p>v-if 和 v-show 条件渲染</p>
+<ul>
+<li>v-if 是真正的条件渲染（也就是改变属性会重新渲染），初始渲染较快（少渲染DOM了），后续改变属性开销大</li>
+<li>v-show 只是改变了 display 属性，也就是第一次加载把DOM全渲染了，后续只改变display:none罢了</li>
+</ul>
+</li>
+<li><p>v-for 循环（列表）渲染</p>
+<ul>
+<li>key 不能乱写<ul>
+<li>尽量不用 index 做 key<strong>（好像没问题？）</strong></li>
+</ul>
+</li>
+<li>v-for 和 v-if 不能一起使用<ul>
+<li>应该把 v-if 加在 v-for 的外层，也不知道为啥有人能把这俩一起用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>事件</p>
+<ul>
+<li>event 参数，自定义参数<ul>
+<li>event 是原生的事件</li>
+<li>事件挂载到当前元素</li>
+</ul>
+</li>
+<li>事件修饰符，按键修饰符<ul>
+<li>事件修饰符：<code>stop</code>  阻止单击事件继续传播；  <code>prevent</code> 提交事件不再重载页面；   <code>capture</code> 使用捕获模式；    <code>self</code> 只处理元素自发触发的事件</li>
+<li>按键修饰符：<code>ctrl.exact</code> 只有ctrl 按下时事件才能被触发</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v-model 表单</p>
+<ul>
+<li>修饰符：<code>lazy</code>  输入完成后改变data； <code>trim</code>  去除首尾空格； <code>number</code>  自动把输入解析成number给到data（解析好像不咋地，很难用）</li>
+<li>输入框、复选框、多个复选框、单选框、下拉列表</li>
+</ul>
+</li>
+</ul>
+<h5 id="Vue组件使用"><a href="#Vue组件使用" class="headerlink" title="Vue组件使用"></a>Vue组件使用</h5><ul>
+<li>props 和 $emit （父子组件通信）<ul>
+<li>props 用来接收父组件传递的data，（父组件使用动态属性传递data）<ul>
+<li>props 可以搭配 computed 来对单向流动的数据做出更改（比如 trim 去空格，toLowerCase 转化小写）</li>
+</ul>
+</li>
+<li>$emit 用来触发定义好的父组件上的函数</li>
+</ul>
+</li>
+<li>组件间通讯 - 自定义事件 （兄弟组件通信）<ul>
+<li>Vue3不支持这么做，因为不利于维护，可以选择子组件通过父组件建立联系</li>
+</ul>
+</li>
+<li>组件生命周期<ul>
+<li>创建，改变，销毁</li>
+<li><code>created</code>   <code>mounted</code>   <code>beforeUpdate</code>   <code>updated</code>   <code>unmounted</code></li>
+</ul>
+</li>
+</ul>
+<h5 id="Vue高级特性"><a href="#Vue高级特性" class="headerlink" title="Vue高级特性"></a>Vue高级特性</h5><ul>
+<li><p>自定义 v-model</p>
+<ul>
+<li>就是自定义的组件使用 v-model 来像 form 组件一样方便获取数据</li>
+<li>感觉是个语法糖，和父子组件传参差不多</li>
+</ul>
+</li>
+<li><p>$nextTick</p>
+<ul>
+<li>Vue 是异步渲染，data改变后，DOM不会立刻渲染</li>
+<li>因此有些同步函数想在渲染执行后生效（渲染是异步）就需要被包裹在 $nextTick 里（完全没用过）</li>
+</ul>
+</li>
+<li><p>slot</p>
+<ul>
+<li>基本使用</li>
+<li>作用域插槽</li>
+<li>具名插槽</li>
+</ul>
+</li>
+<li><p>动态、异步组件</p>
+<ul>
+<li><p>动态组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:is=&quot;componentName&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>异步组件：加载组件时再去请求资源。有些组件并不是一定要加载的，只在必要时加载（v-if）能提高网络效率</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components: &#123;</span><br><span class="line">	FormDemo: ()=&gt; import(&#x27;../BaseUse/FormDemo&#x27;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>keep-alive 缓存组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;keep-alive&gt;</span><br><span class="line">    &lt;KeepAliveA v-if=&quot;show===&#x27;A&#x27;&quot; /&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br><span class="line">&lt;keep-alive&gt;</span><br><span class="line">    &lt;KeepAliveB v-if=&quot;show===&#x27;B&#x27;&quot; /&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mixin</p>
+<ul>
+<li>多个组件有相同的逻辑，抽离出来</li>
+<li>Vue 3 提出了 Composition API 来解决这些问题</li>
+<li>存在的问题<ul>
+<li>变量来源不明确，不利于阅读（需要点开对应的mixin文件查看）</li>
+<li>多 mixin 可能会造成命名冲突（同名data之间相互干扰）</li>
+<li>minxin 和组件可能会出现多对多的关系（应该从降低复杂度的角度出发）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="Vuex-使用"><a href="#Vuex-使用" class="headerlink" title="Vuex 使用"></a>Vuex 使用</h5><p><img src="https://vuex.vuejs.org/vuex.png"></p>
+<ul>
+<li>Vuex 基本概念<ul>
+<li>state</li>
+<li>getters</li>
+<li>action<ul>
+<li>所有的异步操作放在这个环节</li>
+</ul>
+</li>
+<li>mutation</li>
+</ul>
+</li>
+<li>用于 Vue 组件<ul>
+<li>dispatch</li>
+<li>commit</li>
+<li>mapState</li>
+<li>mapGetters</li>
+<li>mapActions</li>
+<li>mapMutations</li>
+</ul>
+</li>
+</ul>
+<p>Vue-router</p>
+<ul>
+<li>路由模式（hash、H5 history）</li>
+<li>路由配置（动态路由、懒加载）</li>
+</ul>
+<h3 id="Vue原理"><a href="#Vue原理" class="headerlink" title="Vue原理"></a>Vue原理</h3><h5 id="如何理解MVVM（数据驱动视图）"><a href="#如何理解MVVM（数据驱动视图）" class="headerlink" title="如何理解MVVM（数据驱动视图）"></a>如何理解MVVM（数据驱动视图）</h5><ul>
+<li>MVVM模型：view vm model</li>
+</ul>
+<h5 id="Vue-响应式"><a href="#Vue-响应式" class="headerlink" title="Vue 响应式"></a>Vue 响应式</h5><ul>
+<li>组件 data 的数据一旦变化，立刻触发视图的更新</li>
+<li>核心 API - Object.defineProperty（Vue3.0 使用Proxy）</li>
+</ul>
+<h5 id="虚拟DOM-和-diff-算法"><a href="#虚拟DOM-和-diff-算法" class="headerlink" title="虚拟DOM 和 diff 算法"></a>虚拟DOM 和 diff 算法</h5><ul>
+<li><p>本质上是为了减少 DOM 操作</p>
+</li>
+<li><h2 id="vdom"><a href="#vdom" class="headerlink" title="vdom"></a>vdom</h2></li>
+</ul>
+
       
     </div>
     <div class="article-footer">
