@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>ES6 | Hexo</title>
+  <meta name="description" content="ECMAScript 与 JavaScript ECMAScript 是 JavaScript 的标准规范，JavaScript 是 ECMAScript 的扩展 JavaScript(浏览器) &#x3D; ECMAScript + Web APIs(BOM  DOM) Node.js &#x3D; ECMAScript + Node APIs(fs net etc.)   let const">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6">
+<meta property="og:url" content="https://franky-jia.github.io/2022/05/28/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%20(copy)/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ECMAScript 与 JavaScript ECMAScript 是 JavaScript 的标准规范，JavaScript 是 ECMAScript 的扩展 JavaScript(浏览器) &#x3D; ECMAScript + Web APIs(BOM  DOM) Node.js &#x3D; ECMAScript + Node APIs(fs net etc.)   let const">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="d:/blog/images/img/Proxy.png">
+<meta property="article:published_time" content="2022-05-28T06:50:52.000Z">
+<meta property="article:modified_time" content="2022-06-25T07:33:59.964Z">
+<meta property="article:tag" content="前端面试">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:/blog/images/img/Proxy.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://franky-jia.github.io/2022/05/28/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%20(copy)/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/franky-jia" target="_blank">
+          <img class="img-circle img-rotate" src="/images/aaa.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">取名很困难</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/">前端面试</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/" rel="tag">Django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode-Top-Questions/" rel="tag">LeetCode Top Questions</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/continue-practice/" rel="tag">continue practice</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dp/" rel="tag">dp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/requests/" rel="tag">requests</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unfinished/" rel="tag">unfinished</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/" rel="tag">前端面试</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">拉钩学习笔记</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Django/" style="font-size: 13px;">Django</a> <a href="/tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="/tags/LeetCode/" style="font-size: 14px;">LeetCode</a> <a href="/tags/LeetCode-Top-Questions/" style="font-size: 14px;">LeetCode Top Questions</a> <a href="/tags/continue-practice/" style="font-size: 13px;">continue practice</a> <a href="/tags/dp/" style="font-size: 13px;">dp</a> <a href="/tags/javascript/" style="font-size: 13.2px;">javascript</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/requests/" style="font-size: 13px;">requests</a> <a href="/tags/unfinished/" style="font-size: 13.4px;">unfinished</a> <a href="/tags/vue/" style="font-size: 13px;">vue</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/" style="font-size: 13.8px;">前端面试</a> <a href="/tags/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 13.6px;">拉钩学习笔记</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 13px;">爬虫</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/27/%E5%B7%A5%E7%A8%8B%E5%8C%96/" class="title">工程化</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-27T11:27:34.000Z" itemprop="datePublished">2022-06-27</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/27/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="title">JS性能优化</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-26T23:37:46.000Z" itemprop="datePublished">2022-06-27</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/26/TypeScript/" class="title">TypeScript</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-26T07:04:03.000Z" itemprop="datePublished">2022-06-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/26/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%89%8B%E5%86%99Promise/" class="title">手写Promise</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-26T00:24:49.000Z" itemprop="datePublished">2022-06-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/06/25/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JS%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/" class="title">JS异步编程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-06-24T23:54:05.000Z" itemprop="datePublished">2022-06-25</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-前端学习/ES6 (copy)" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ES6
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/28/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%20(copy)/" class="article-date">
+	  <time datetime="2022-05-28T06:50:52.000Z" itemprop="datePublished">2022-05-28</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/" rel="tag">前端面试</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/28/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%20(copy)/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <ul>
+<li><h5 id="ECMAScript-与-JavaScript"><a href="#ECMAScript-与-JavaScript" class="headerlink" title="ECMAScript 与 JavaScript"></a>ECMAScript 与 JavaScript</h5><ul>
+<li>ECMAScript 是 JavaScript 的标准规范，JavaScript 是 ECMAScript 的扩展</li>
+<li>JavaScript(浏览器) &#x3D; ECMAScript + Web APIs(BOM  DOM)</li>
+<li>Node.js &#x3D; ECMAScript + Node APIs(fs net etc.)</li>
+</ul>
+</li>
+<li><h5 id="let-const-块级作用域"><a href="#let-const-块级作用域" class="headerlink" title="let const 块级作用域"></a>let const 块级作用域</h5><ul>
+<li><code>for</code> <code>if</code> 的作用域叫做块级作用域</li>
+<li>const声明的量不能修改，let能完全替代var</li>
+<li>最佳实践：不用var，主用const，配合let</li>
+</ul>
+</li>
+<li><h5 id="解构"><a href="#解构" class="headerlink" title="解构"></a>解构</h5><ul>
+<li><p>数组的解构</p>
+<ul>
+<li><pre><code>const [a,b,c] = [1,2,3]
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">const [ , , c] = [1,2,3]</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+<li><p>&#96;&#96;&#96;</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>const [ , …c] &#x3D; [1,2,3]       &#x2F;&#x2F;c&#x3D;[2,3]<br>    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 对象的解构</span><br><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">  const &#123;log&#125; = console       //这个是省略value的解耦，默认相同了</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><pre><code>  const &#123;log:l&#125; = console     //这个是正常的解耦
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">- ##### 模板字符串</span><br><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">    `string`   $&#123;name&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+<li><p>&#96;&#96;&#96;<br>let str &#x3D; ‘123’<br>console.log(<code>abc$&#123;str&#125;abc</code>)   &#x2F;&#x2F;abc123abc<br>console.log(<code>abc$&#123;1+1&#125;abc</code>)   &#x2F;&#x2F;abc2abc</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">- ##### 常用字符串扩展方法</span><br><span class="line"></span><br><span class="line">  - `includes()`</span><br><span class="line">  - `startsWith()`</span><br><span class="line">  - `endsWith()`</span><br><span class="line"></span><br><span class="line">- ##### 参数默认值</span><br><span class="line"></span><br><span class="line">- ##### 剩余参数</span><br><span class="line"></span><br><span class="line">  - `...arg`</span><br><span class="line">  </span><br><span class="line">  - ```</span><br><span class="line">    function fn(first, ...arg)&#123;</span><br><span class="line">    	console.log(arg)</span><br><span class="line">    &#125;</span><br><span class="line">    fn(1,2,3,4)</span><br><span class="line">  //[2, 3, 4]</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h5 id="展开数组"><a href="#展开数组" class="headerlink" title="展开数组"></a>展开数组</h5><ul>
+<li><p><code>...[]</code></p>
+</li>
+<li><pre><code>arr = [1,2,3]
+console.log(...arr)
+// 1 2 3
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ##### 箭头函数</span><br><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">    const fn = (a, b) =&gt;&#123;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+<li><p>&#96;&#96;&#96;<br>arr.filter(i &#x3D;&gt; i%2)     &#x2F;&#x2F;判断奇数偶数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - 箭头函数不会改变 `this` 的指向，或者说`this`指向箭头函数外部那层函数</span><br><span class="line"></span><br><span class="line">- ##### 计算属性名</span><br><span class="line"></span><br><span class="line">  - 使用 [] 来说明是表达式，只能用表达式</span><br><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">    const fn = ()=&gt;&#x27;key&#x27;</span><br><span class="line">    const obj = &#123;</span><br><span class="line">    	[Math.random()]: 123,</span><br><span class="line">    	[fn()]: 123</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h5 id="对象扩展方法"><a href="#对象扩展方法" class="headerlink" title="对象扩展方法"></a>对象扩展方法</h5><ul>
+<li><p><code>Object.assign()</code> ，两个参数都是对象，第二个对象覆盖第一个对象对应key的value</p>
+<ul>
+<li>&#96;&#96;&#96;<br>const obj1 &#x3D; {<br>a: 1,<br>}<br>const obj2 &#x3D; {<br>a: 2<br>}<br>const result &#x3D; Object.assign(obj1, obj2)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- `Object.is()`，做判断是否相等的，大多时候还是使用全等符号</span><br><span class="line"></span><br><span class="line">- `Proxy`  为 obj （数组也行j）添加 get 和 set 函数，用于在访问Obj或者改变Obj的时候做出对应的反应。也有其他的捕捉器，几乎所有对obj的操作都可以捕捉`https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy#%E6%96%B9%E6%B3%95`</span><br><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">    const person = &#123;</span><br><span class="line">    	name: &#x27;zero&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">    const personProxy = new Proxy(person, &#123;</span><br><span class="line">    	get (target, property) &#123;</span><br><span class="line">    		console.log(target, property)</span><br><span class="line">    	&#125;,</span><br><span class="line">    	set (target, property, value, receiver)&#123;</span><br><span class="line">    		Reflect.set(target, property, value, receiver)</span><br><span class="line">    		console.log(target, property, value, receiver)</span><br><span class="line">    	&#125;,</span><br><span class="line">    	deleteProperty (target, property)&#123;</span><br><span class="line">    		</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+重写 set 函数的时候要注意保持住代理的功能</li>
+</ul>
+</li>
+<li><p><img src="D:\blog\images\img\Proxy.png"></p>
+</li>
+<li><p>Proxy 对比 defineProperty</p>
+<ul>
+<li>Proxy 不会改动原有的obj</li>
+<li>Proxy 更方便，毕竟是因为使用时的需求推动的</li>
+</ul>
+</li>
+<li><p><code>Reflect()</code> 相当于一个全局的静态的默认的<code>Proxy</code>  （默认指的是在没有没有自定义set,get函数的前提下，就只是set的默认行为）</p>
+<ul>
+<li><p>可以在自己重写set方法后调用 <code>Reflect.set(target, property, value, receiver)</code> 来把默认行为添加上</p>
+</li>
+<li><p>其他的用法，使用Reflect是为了保持编程风格</p>
+<ul>
+<li><p>查看 obj 里有没有 name 这个key</p>
+<ul>
+<li>&#96;&#96;&#96;<br>‘name’ in obj 	    &#x2F;&#x2F;旧的写法<br>Reflect.has(obj, ‘age’)       &#x2F;&#x2F;新的写法<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 删除 age 这个key</span><br><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">    delete obj[&#x27;age&#x27;]</span><br><span class="line">    Reflect.deleteProperty(obj, &#x27;age&#x27;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>查看Obj 有哪些key</p>
+<ul>
+<li>&#96;&#96;&#96;<br>Object.keys(obj)<br>Reflect.ownKeys(obj)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- `Promise` </span><br><span class="line"></span><br><span class="line">- `class` 类</span><br><span class="line"></span><br><span class="line">  - 过去使用原型链实现继承，js的继承是层级的，调用一个方法后会逐渐向上查找，直到找到为止或到null结束，this指向的是找到调用的方法的那个层级的那个原型。任何最上的Object最后会有个 object.prototype，因为object也需要向上进行链式查找或者说也需要添加属性或者方法吧</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>function Person(name){<br>    this.name &#x3D; name<br>}<br>Person.prototype.say &#x3D; function(){<br>    console.log(<code>name is $&#123;this.name&#125;</code>)<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<p>const one &#x3D; new Person()<br>console.log(one)<br>    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 用class，及static静态方法</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>    class Person {<br>        constructor (name){<br>            this.name &#x3D; name<br>        }<br>        say (){<br>            console.log(‘name is ${this.name}’)<br>        }<br>        static create(name){<br>            return new Person(name)<br>        }<br>    }<br>    const p &#x3D; new Person(‘tom’)<br>    p.say()<br>    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">- Set 数据结构</span><br><span class="line"></span><br><span class="line">  -  构造</span><br><span class="line"></span><br><span class="line">    - ```</span><br><span class="line">      const mySet = new Set()</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>常用来去重</p>
+<ul>
+<li>&#96;&#96;&#96;<br>const mySet &#x3D; new Set(arr)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- Map 数据结构</span><br><span class="line"></span><br><span class="line">  - 之前一直把object当作map，属于是没有专门的数据结构来处理key,value这种形式。所以map出来了</span><br><span class="line">  - 特点：key可以是函数对象或其他基本类型；按添加键值对的顺序迭代</span><br><span class="line">  - 常用方法</span><br><span class="line">    - `set()`</span><br><span class="line">    - `has()`</span><br><span class="line">    - `delect()`</span><br><span class="line">    - `clear()`</span><br><span class="line"></span><br><span class="line">- 可迭代接口，原型链上有个 Symbol.iterator 用于迭代。</span><br><span class="line"></span><br><span class="line">  - 有这个接口就可以用 `for(let item of obj)` 这种for of 迭代</span><br><span class="line"></span><br><span class="line">  - ```</span><br><span class="line">    const mySet = new Set([1,2,3,4])</span><br><span class="line">    const iterator = mySet[Symbol.iterator]()</span><br><span class="line">    iterator.next()</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>实现可迭代接口（手写）</strong>，可迭代接口的意思是提前声明哪种结构可以被迭代，创建的obj带着这种结构就能被迭代了</p>
+</li>
+<li><p>迭代器模式</p>
+<ul>
+<li>实现方式：内部实现可迭代接口供外部调用</li>
+</ul>
+</li>
+<li><p>生成器函数，可以防止异步嵌套过深</p>
+<ul>
+<li><p><code>*</code> 意味着是生成器函数，yeild是每次执行next()时的中止点，next返回yeild对应的值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function * fn()&#123;</span><br><span class="line">	console.log(&#x27;1&#x27;)</span><br><span class="line">	yeild 111</span><br><span class="line">	console.log(&#x27;2&#x27;)</span><br><span class="line">	yeild 222</span><br><span class="line">	console.log(&#x27;3&#x27;)</span><br><span class="line">	yeild 333</span><br><span class="line">&#125;</span><br><span class="line">const generator = fn()</span><br><span class="line">console.log(generator.next())</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>ES Modules</p>
+</li>
+<li><p>ES2017</p>
+<ul>
+<li><p>entries</p>
+<ul>
+<li><p>把Obj转化成二维数组，用于遍历，一次循环即可，可以用[key, value] 直接解构</p>
+</li>
+<li><p>调用 entries 的结果正好是 new Map()需要的</p>
+<ul>
+<li><pre><code>new Map(Object.entries(obj))
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://franky-jia.github.io/2022/05/28/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6%20(copy)/" title="ES6" target="_blank" rel="external">https://franky-jia.github.io/2022/05/28/前端学习/ES6 (copy)/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/franky-jia" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/aaa.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/franky-jia" target="_blank"><span class="text-dark">取名很困难</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/05/28/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/ES6/" title="ES6"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/05/28/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/ES6/" title="ES6"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" ><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" ><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" ><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <!-- <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div> -->
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>
