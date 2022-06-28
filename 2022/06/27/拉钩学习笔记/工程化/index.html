@@ -17,20 +17,22 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>JS性能优化 | Hexo</title>
-  <meta name="description" content="内存管理 内存：由读写单元组成，表示一片可操作空间 管理：认为的去操作一片空间的申请、使用和释放 内存管理：开发者主动申请空间、使用空间、释放空间 管理流程：申请——使用——释放  GC算法V8引擎堆栈处理 基本类型 引用类型 函数 闭包 本质上是外层上下文的 堆 被内层上下文所引用，因此执行的时候外层上下文对应的数据无法被释放    事件委托把事件绑定在父级标签上，通过冒泡触发 JSBench">
+  <title>工程化 | Hexo</title>
+  <meta name="description" content="工程化概述工程化的表现提高效率、降低成本、质量保证（代码风格统一，自动校验） 前端工程化解决的问题示例使用ES6+新特性，但存在兼容性问题 使用 Less&#x2F;Sass&#x2F;PostCSS 但是运行环境不能直接支持 部分功能开发需要等待后端接口提前完成 工程化 !&#x3D; 工具常见的工程化流程  脚手架工具YeomanPlop自动化构建把源代码转化成生产代码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS性能优化">
-<meta property="og:url" content="https://franky-jia.github.io/2022/06/27/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/index.html">
+<meta property="og:title" content="工程化">
+<meta property="og:url" content="https://franky-jia.github.io/2022/06/27/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B7%A5%E7%A8%8B%E5%8C%96/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="内存管理 内存：由读写单元组成，表示一片可操作空间 管理：认为的去操作一片空间的申请、使用和释放 内存管理：开发者主动申请空间、使用空间、释放空间 管理流程：申请——使用——释放  GC算法V8引擎堆栈处理 基本类型 引用类型 函数 闭包 本质上是外层上下文的 堆 被内层上下文所引用，因此执行的时候外层上下文对应的数据无法被释放    事件委托把事件绑定在父级标签上，通过冒泡触发 JSBench">
+<meta property="og:description" content="工程化概述工程化的表现提高效率、降低成本、质量保证（代码风格统一，自动校验） 前端工程化解决的问题示例使用ES6+新特性，但存在兼容性问题 使用 Less&#x2F;Sass&#x2F;PostCSS 但是运行环境不能直接支持 部分功能开发需要等待后端接口提前完成 工程化 !&#x3D; 工具常见的工程化流程  脚手架工具YeomanPlop自动化构建把源代码转化成生产代码">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-06-26T23:37:46.000Z">
-<meta property="article:modified_time" content="2022-06-27T03:25:14.434Z">
+<meta property="og:image" content="d:/blog/images/img/工程化.png">
+<meta property="article:published_time" content="2022-06-27T11:27:34.000Z">
+<meta property="article:modified_time" content="2022-06-28T02:48:47.128Z">
 <meta property="article:tag" content="拉钩学习笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:/blog/images/img/工程化.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://franky-jia.github.io/2022/06/27/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/index.html">
+  <link rel="canonical" href="https://franky-jia.github.io/2022/06/27/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B7%A5%E7%A8%8B%E5%8C%96/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -228,7 +230,7 @@
   <div class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/" rel="tag">Django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode-Top-Questions/" rel="tag">LeetCode Top Questions</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/continue-practice/" rel="tag">continue practice</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dp/" rel="tag">dp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/requests/" rel="tag">requests</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unfinished/" rel="tag">unfinished</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/" rel="tag">前端面试</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">拉钩学习笔记</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/" rel="tag">Django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode-Top-Questions/" rel="tag">LeetCode Top Questions</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/continue-practice/" rel="tag">continue practice</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dp/" rel="tag">dp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/requests/" rel="tag">requests</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unfinished/" rel="tag">unfinished</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/" rel="tag">前端面试</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">拉钩学习笔记</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -238,7 +240,7 @@
   <div class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/Django/" style="font-size: 13px;">Django</a> <a href="/tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="/tags/LeetCode/" style="font-size: 14px;">LeetCode</a> <a href="/tags/LeetCode-Top-Questions/" style="font-size: 14px;">LeetCode Top Questions</a> <a href="/tags/continue-practice/" style="font-size: 13px;">continue practice</a> <a href="/tags/dp/" style="font-size: 13px;">dp</a> <a href="/tags/javascript/" style="font-size: 13.2px;">javascript</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/requests/" style="font-size: 13px;">requests</a> <a href="/tags/unfinished/" style="font-size: 13.4px;">unfinished</a> <a href="/tags/vue/" style="font-size: 13px;">vue</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/" style="font-size: 13.8px;">前端面试</a> <a href="/tags/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 13.6px;">拉钩学习笔记</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 13px;">爬虫</a>
+      <a href="/tags/Django/" style="font-size: 13px;">Django</a> <a href="/tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="/tags/LeetCode/" style="font-size: 14px;">LeetCode</a> <a href="/tags/LeetCode-Top-Questions/" style="font-size: 14px;">LeetCode Top Questions</a> <a href="/tags/continue-practice/" style="font-size: 13px;">continue practice</a> <a href="/tags/dp/" style="font-size: 13px;">dp</a> <a href="/tags/javascript/" style="font-size: 13.25px;">javascript</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/requests/" style="font-size: 13px;">requests</a> <a href="/tags/unfinished/" style="font-size: 13.5px;">unfinished</a> <a href="/tags/vue/" style="font-size: 13px;">vue</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/" style="font-size: 13.75px;">前端面试</a> <a href="/tags/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 13.75px;">拉钩学习笔记</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 13px;">爬虫</a>
     </div>
   </div>
 
@@ -247,7 +249,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -266,7 +268,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2022/06/27/%E5%B7%A5%E7%A8%8B%E5%8C%96/" class="title">工程化</a>
+                <a href="/2022/06/27/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B7%A5%E7%A8%8B%E5%8C%96/" class="title">工程化</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-06-27T11:27:34.000Z" itemprop="datePublished">2022-06-27</time>
@@ -281,7 +283,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2022/06/27/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="title">JS性能优化</a>
+                <a href="/2022/06/27/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="title">JS性能优化</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-06-26T23:37:46.000Z" itemprop="datePublished">2022-06-27</time>
@@ -296,7 +298,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2022/06/26/TypeScript/" class="title">TypeScript</a>
+                <a href="/2022/06/26/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/TypeScript/" class="title">TypeScript</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-06-26T07:04:03.000Z" itemprop="datePublished">2022-06-26</time>
@@ -347,14 +349,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-JS性能优化" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-拉钩学习笔记/工程化" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      JS性能优化
+      工程化
     </h1>
   
 
@@ -362,8 +364,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/06/27/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="article-date">
-	  <time datetime="2022-06-26T23:37:46.000Z" itemprop="datePublished">2022-06-27</time>
+	<a href="/2022/06/27/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B7%A5%E7%A8%8B%E5%8C%96/" class="article-date">
+	  <time datetime="2022-06-27T11:27:34.000Z" itemprop="datePublished">2022-06-27</time>
 	</a>
 </span>
         
@@ -376,33 +378,20 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/06/27/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/06/27/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B7%A5%E7%A8%8B%E5%8C%96/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><ul>
-<li>内存：由读写单元组成，表示一片可操作空间</li>
-<li>管理：认为的去操作一片空间的申请、使用和释放</li>
-<li>内存管理：开发者主动申请空间、使用空间、释放空间</li>
-<li>管理流程：申请——使用——释放</li>
-</ul>
-<h3 id="GC算法"><a href="#GC算法" class="headerlink" title="GC算法"></a>GC算法</h3><h3 id="V8引擎"><a href="#V8引擎" class="headerlink" title="V8引擎"></a>V8引擎</h3><h3 id="堆栈处理"><a href="#堆栈处理" class="headerlink" title="堆栈处理"></a>堆栈处理</h3><ul>
-<li>基本类型</li>
-<li>引用类型</li>
-<li>函数</li>
-<li>闭包<ul>
-<li>本质上是外层上下文的 堆 被内层上下文所引用，因此执行的时候外层上下文对应的数据无法被释放</li>
-</ul>
-</li>
-</ul>
-<h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><p>把事件绑定在父级标签上，通过冒泡触发</p>
-<h3 id="JSBench-使用"><a href="#JSBench-使用" class="headerlink" title="JSBench 使用"></a>JSBench 使用</h3><h3 id="变量局部化"><a href="#变量局部化" class="headerlink" title="变量局部化"></a>变量局部化</h3><h3 id="缓存数据"><a href="#缓存数据" class="headerlink" title="缓存数据"></a>缓存数据</h3><h3 id="防抖和节流"><a href="#防抖和节流" class="headerlink" title="防抖和节流"></a>防抖和节流</h3><ul>
-<li>防抖：对于高频的操作来说，只希望识别一次点击</li>
-<li>节流：对于高频的操作来说，按着自定义的频率减少触发的次数</li>
-</ul>
-<h3 id="减少判断"><a href="#减少判断" class="headerlink" title="减少判断"></a>减少判断</h3><h3 id="减少循环"><a href="#减少循环" class="headerlink" title="减少循环"></a>减少循环</h3>
+        <h3 id="工程化概述"><a href="#工程化概述" class="headerlink" title="工程化概述"></a>工程化概述</h3><h4 id="工程化的表现"><a href="#工程化的表现" class="headerlink" title="工程化的表现"></a>工程化的表现</h4><p>提高效率、降低成本、质量保证（代码风格统一，自动校验）</p>
+<h4 id="前端工程化解决的问题示例"><a href="#前端工程化解决的问题示例" class="headerlink" title="前端工程化解决的问题示例"></a>前端工程化解决的问题示例</h4><p>使用ES6+新特性，但存在兼容性问题</p>
+<p>使用 Less&#x2F;Sass&#x2F;PostCSS 但是运行环境不能直接支持</p>
+<p>部分功能开发需要等待后端接口提前完成</p>
+<h4 id="工程化-x3D-工具"><a href="#工程化-x3D-工具" class="headerlink" title="工程化 !&#x3D; 工具"></a>工程化 !&#x3D; 工具</h4><p>常见的工程化流程</p>
+<p><img src="D:\blog\images\img\工程化.png"></p>
+<h3 id="脚手架工具"><a href="#脚手架工具" class="headerlink" title="脚手架工具"></a>脚手架工具</h3><h4 id="Yeoman"><a href="#Yeoman" class="headerlink" title="Yeoman"></a>Yeoman</h4><h4 id="Plop"><a href="#Plop" class="headerlink" title="Plop"></a>Plop</h4><h3 id="自动化构建"><a href="#自动化构建" class="headerlink" title="自动化构建"></a>自动化构建</h3><p>把源代码转化成生产代码</p>
+
       
     </div>
     <div class="article-footer">
@@ -411,7 +400,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://franky-jia.github.io/2022/06/27/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="JS性能优化" target="_blank" rel="external">https://franky-jia.github.io/2022/06/27/JS性能优化/</a>
+      <a href="https://franky-jia.github.io/2022/06/27/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B7%A5%E7%A8%8B%E5%8C%96/" title="工程化" target="_blank" rel="external">https://franky-jia.github.io/2022/06/27/拉钩学习笔记/工程化/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -451,13 +440,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2022/06/27/%E5%B7%A5%E7%A8%8B%E5%8C%96/" title="工程化"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2022/06/26/TypeScript/" title="TypeScript"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/06/27/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="JS性能优化"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

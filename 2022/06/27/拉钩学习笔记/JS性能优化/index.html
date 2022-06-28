@@ -17,20 +17,20 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>TypeScript | Hexo</title>
-  <meta name="description" content="强类型与弱类型，动态类型与静态类型弱类型：&#39;100&#39; - 50 运算时自动改变类型 动态类型： let a &#x3D; 10   a &#x3D; &#39;10&#39; 变量不规定类型 Flow读 react 或者 vue 源码可能会用到 TypeScript1yarn init --yes  1yarn add typescript --dev  1yarn tsc XXX.ts  1yarn">
+  <title>JS性能优化 | Hexo</title>
+  <meta name="description" content="内存管理 内存：由读写单元组成，表示一片可操作空间 管理：认为的去操作一片空间的申请、使用和释放 内存管理：开发者主动申请空间、使用空间、释放空间 管理流程：申请——使用——释放  GC算法V8引擎堆栈处理 基本类型 引用类型 函数 闭包 本质上是外层上下文的 堆 被内层上下文所引用，因此执行的时候外层上下文对应的数据无法被释放    事件委托把事件绑定在父级标签上，通过冒泡触发 JSBench">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TypeScript">
-<meta property="og:url" content="https://franky-jia.github.io/2022/06/26/TypeScript/index.html">
+<meta property="og:title" content="JS性能优化">
+<meta property="og:url" content="https://franky-jia.github.io/2022/06/27/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="强类型与弱类型，动态类型与静态类型弱类型：&#39;100&#39; - 50 运算时自动改变类型 动态类型： let a &#x3D; 10   a &#x3D; &#39;10&#39; 变量不规定类型 Flow读 react 或者 vue 源码可能会用到 TypeScript1yarn init --yes  1yarn add typescript --dev  1yarn tsc XXX.ts  1yarn">
+<meta property="og:description" content="内存管理 内存：由读写单元组成，表示一片可操作空间 管理：认为的去操作一片空间的申请、使用和释放 内存管理：开发者主动申请空间、使用空间、释放空间 管理流程：申请——使用——释放  GC算法V8引擎堆栈处理 基本类型 引用类型 函数 闭包 本质上是外层上下文的 堆 被内层上下文所引用，因此执行的时候外层上下文对应的数据无法被释放    事件委托把事件绑定在父级标签上，通过冒泡触发 JSBench">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-06-26T07:04:03.000Z">
-<meta property="article:modified_time" content="2022-06-26T09:21:12.264Z">
+<meta property="article:published_time" content="2022-06-26T23:37:46.000Z">
+<meta property="article:modified_time" content="2022-06-27T03:25:14.434Z">
 <meta property="article:tag" content="拉钩学习笔记">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://franky-jia.github.io/2022/06/26/TypeScript/index.html">
+  <link rel="canonical" href="https://franky-jia.github.io/2022/06/27/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -228,7 +228,7 @@
   <div class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/" rel="tag">Django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode-Top-Questions/" rel="tag">LeetCode Top Questions</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/continue-practice/" rel="tag">continue practice</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dp/" rel="tag">dp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/requests/" rel="tag">requests</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unfinished/" rel="tag">unfinished</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/" rel="tag">前端面试</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">拉钩学习笔记</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/" rel="tag">Django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode-Top-Questions/" rel="tag">LeetCode Top Questions</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/continue-practice/" rel="tag">continue practice</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dp/" rel="tag">dp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/requests/" rel="tag">requests</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unfinished/" rel="tag">unfinished</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/" rel="tag">前端面试</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">拉钩学习笔记</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -238,7 +238,7 @@
   <div class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/Django/" style="font-size: 13px;">Django</a> <a href="/tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="/tags/LeetCode/" style="font-size: 14px;">LeetCode</a> <a href="/tags/LeetCode-Top-Questions/" style="font-size: 14px;">LeetCode Top Questions</a> <a href="/tags/continue-practice/" style="font-size: 13px;">continue practice</a> <a href="/tags/dp/" style="font-size: 13px;">dp</a> <a href="/tags/javascript/" style="font-size: 13.2px;">javascript</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/requests/" style="font-size: 13px;">requests</a> <a href="/tags/unfinished/" style="font-size: 13.4px;">unfinished</a> <a href="/tags/vue/" style="font-size: 13px;">vue</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/" style="font-size: 13.8px;">前端面试</a> <a href="/tags/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 13.6px;">拉钩学习笔记</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 13px;">爬虫</a>
+      <a href="/tags/Django/" style="font-size: 13px;">Django</a> <a href="/tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="/tags/LeetCode/" style="font-size: 14px;">LeetCode</a> <a href="/tags/LeetCode-Top-Questions/" style="font-size: 14px;">LeetCode Top Questions</a> <a href="/tags/continue-practice/" style="font-size: 13px;">continue practice</a> <a href="/tags/dp/" style="font-size: 13px;">dp</a> <a href="/tags/javascript/" style="font-size: 13.25px;">javascript</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/requests/" style="font-size: 13px;">requests</a> <a href="/tags/unfinished/" style="font-size: 13.5px;">unfinished</a> <a href="/tags/vue/" style="font-size: 13px;">vue</a> <a href="/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/" style="font-size: 13.75px;">前端面试</a> <a href="/tags/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 13.75px;">拉钩学习笔记</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 13px;">爬虫</a>
     </div>
   </div>
 
@@ -247,7 +247,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -266,7 +266,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2022/06/27/%E5%B7%A5%E7%A8%8B%E5%8C%96/" class="title">工程化</a>
+                <a href="/2022/06/27/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B7%A5%E7%A8%8B%E5%8C%96/" class="title">工程化</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-06-27T11:27:34.000Z" itemprop="datePublished">2022-06-27</time>
@@ -281,7 +281,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2022/06/27/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="title">JS性能优化</a>
+                <a href="/2022/06/27/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="title">JS性能优化</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-06-26T23:37:46.000Z" itemprop="datePublished">2022-06-27</time>
@@ -296,7 +296,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2022/06/26/TypeScript/" class="title">TypeScript</a>
+                <a href="/2022/06/26/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/TypeScript/" class="title">TypeScript</a>
               </p>
               <p class="item-date">
                 <time datetime="2022-06-26T07:04:03.000Z" itemprop="datePublished">2022-06-26</time>
@@ -347,14 +347,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-TypeScript" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-拉钩学习笔记/JS性能优化" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      TypeScript
+      JS性能优化
     </h1>
   
 
@@ -362,8 +362,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/06/26/TypeScript/" class="article-date">
-	  <time datetime="2022-06-26T07:04:03.000Z" itemprop="datePublished">2022-06-26</time>
+	<a href="/2022/06/27/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="article-date">
+	  <time datetime="2022-06-26T23:37:46.000Z" itemprop="datePublished">2022-06-27</time>
 	</a>
 </span>
         
@@ -376,41 +376,33 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/06/26/TypeScript/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/06/27/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h3 id="强类型与弱类型，动态类型与静态类型"><a href="#强类型与弱类型，动态类型与静态类型" class="headerlink" title="强类型与弱类型，动态类型与静态类型"></a>强类型与弱类型，动态类型与静态类型</h3><p>弱类型：<code>&#39;100&#39; - 50</code> 运算时自动改变类型</p>
-<p>动态类型： <code>let a = 10   a = &#39;10&#39;</code> 变量不规定类型</p>
-<h3 id="Flow"><a href="#Flow" class="headerlink" title="Flow"></a>Flow</h3><p>读 react 或者 vue 源码可能会用到</p>
-<h3 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn init --yes</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add typescript --dev</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn tsc XXX.ts</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn tsc --init</span><br></pre></td></tr></table></figure>
-
-<h5 id="原始数据类型"><a href="#原始数据类型" class="headerlink" title="原始数据类型"></a>原始数据类型</h5><p><code>string</code> <code>number</code> <code>boolean</code> <code>viod</code> <code>null</code> <code>undefined</code> <code>symbol</code> </p>
-<h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><p>数组类型：<code>number[]</code></p>
-<p>元组类型：<code>[number, string]</code></p>
-<p>枚举类型：</p>
-<p>函数类型：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const func2 = function(a:number, b:number):string &#123;</span><br><span class="line">	return &#x27;func2&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>类型断言</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const res = 1</span><br><span class="line">const num1 = res as number</span><br></pre></td></tr></table></figure>
-
-<p>TypeScript 接口</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">interface Post &#123;</span><br><span class="line">	title: string</span><br><span class="line">	content: string</span><br><span class="line">&#125;</span><br><span class="line">function printPost (post: Post)&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>类</p>
-<h5 id="标准库声明"><a href="#标准库声明" class="headerlink" title="标准库声明"></a>标准库声明</h5><p>在 tsconfig 文件中声明使用了哪些标准库，target 与 lib 两个字段</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;target&quot;: &quot;es2015&quot;,</span><br><span class="line">&quot;lib&quot;: [&quot;DOM&quot;],   </span><br></pre></td></tr></table></figure>
-
-
+        <h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><ul>
+<li>内存：由读写单元组成，表示一片可操作空间</li>
+<li>管理：认为的去操作一片空间的申请、使用和释放</li>
+<li>内存管理：开发者主动申请空间、使用空间、释放空间</li>
+<li>管理流程：申请——使用——释放</li>
+</ul>
+<h3 id="GC算法"><a href="#GC算法" class="headerlink" title="GC算法"></a>GC算法</h3><h3 id="V8引擎"><a href="#V8引擎" class="headerlink" title="V8引擎"></a>V8引擎</h3><h3 id="堆栈处理"><a href="#堆栈处理" class="headerlink" title="堆栈处理"></a>堆栈处理</h3><ul>
+<li>基本类型</li>
+<li>引用类型</li>
+<li>函数</li>
+<li>闭包<ul>
+<li>本质上是外层上下文的 堆 被内层上下文所引用，因此执行的时候外层上下文对应的数据无法被释放</li>
+</ul>
+</li>
+</ul>
+<h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><p>把事件绑定在父级标签上，通过冒泡触发</p>
+<h3 id="JSBench-使用"><a href="#JSBench-使用" class="headerlink" title="JSBench 使用"></a>JSBench 使用</h3><h3 id="变量局部化"><a href="#变量局部化" class="headerlink" title="变量局部化"></a>变量局部化</h3><h3 id="缓存数据"><a href="#缓存数据" class="headerlink" title="缓存数据"></a>缓存数据</h3><h3 id="防抖和节流"><a href="#防抖和节流" class="headerlink" title="防抖和节流"></a>防抖和节流</h3><ul>
+<li>防抖：对于高频的操作来说，只希望识别一次点击</li>
+<li>节流：对于高频的操作来说，按着自定义的频率减少触发的次数</li>
+</ul>
+<h3 id="减少判断"><a href="#减少判断" class="headerlink" title="减少判断"></a>减少判断</h3><h3 id="减少循环"><a href="#减少循环" class="headerlink" title="减少循环"></a>减少循环</h3>
       
     </div>
     <div class="article-footer">
@@ -419,7 +411,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://franky-jia.github.io/2022/06/26/TypeScript/" title="TypeScript" target="_blank" rel="external">https://franky-jia.github.io/2022/06/26/TypeScript/</a>
+      <a href="https://franky-jia.github.io/2022/06/27/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="JS性能优化" target="_blank" rel="external">https://franky-jia.github.io/2022/06/27/拉钩学习笔记/JS性能优化/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -460,12 +452,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2022/06/27/JS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="JS性能优化"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/2022/06/27/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B7%A5%E7%A8%8B%E5%8C%96/" title="工程化"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2022/06/26/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%89%8B%E5%86%99Promise/" title="手写Promise"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/06/26/%E6%8B%89%E9%92%A9%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/TypeScript/" title="TypeScript"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
